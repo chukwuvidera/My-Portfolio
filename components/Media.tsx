@@ -37,7 +37,7 @@ export default function Media({
   );
   // The tilt lives on a wrapper: the reveal animates the figure's own transform
   return tilt ? (
-    <div className="media-tilt" data-tilt="0.6">
+    <div className="media-tilt" data-tilt="0.8">
       {figure}
     </div>
   ) : (

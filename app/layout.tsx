@@ -10,6 +10,7 @@ import Footer from "@/components/Footer";
 import PointerEffects from "@/components/PointerEffects";
 import Lighting from "@/components/Lighting";
 import Motion from "@/components/Motion";
+import Lightbox from "@/components/Lightbox";
 
 export const metadata: Metadata = {
   // The Vercel address until victorchukwu.design is bought and connected
@@ -55,6 +56,7 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
         <PointerEffects />
         <Lighting />
         <Motion />
+        <Lightbox />
       </body>
     </html>
   );

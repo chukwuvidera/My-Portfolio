@@ -165,12 +165,16 @@ export default function Motion() {
         const r = el.getBoundingClientRect();
         const x = (e.clientX - r.left) / r.width - 0.5;
         const y = (e.clientY - r.top) / r.height - 0.5;
-        el.style.setProperty("--ry", `${(x * 7 * k).toFixed(2)}deg`);
-        el.style.setProperty("--rx", `${(-y * 5 * k).toFixed(2)}deg`);
+        el.style.setProperty("--ry", `${(x * 16 * k).toFixed(2)}deg`);
+        el.style.setProperty("--rx", `${(-y * 12 * k).toFixed(2)}deg`);
+        el.style.setProperty("--hx", `${((x + 0.5) * 100).toFixed(1)}%`);
+        el.style.setProperty("--hy", `${((y + 0.5) * 100).toFixed(1)}%`);
+        el.classList.add("is-tilting");
       };
       const leave = () => {
         el.style.setProperty("--ry", "0deg");
         el.style.setProperty("--rx", "0deg");
+        el.classList.remove("is-tilting");
       };
       el.addEventListener("pointermove", move);
       el.addEventListener("pointerleave", leave);

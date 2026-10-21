@@ -34,6 +34,7 @@ npm run build    # static site in /out
 - `components/Motion.tsx` + `components/Split.tsx` — smooth scrolling, scroll reveals, words that light up or
   assemble on scroll, count-ups, card tilt, pointer depth (all off for visitors who prefer reduced motion)
 - `app/template.tsx` — page-enter transition
+- `components/Lightbox.tsx` — click a case study screen or portrait to view it full-screen, zoom and pan
 - `app/globals.css` — design tokens (light and dark) and all styles, including the Motion section
 - `public/images/` — portraits, original signature PNG, project images
 - `public/brand/` — vectorised signature logo in charcoal, burnt orange and white (SVG)
