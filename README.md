@@ -26,9 +26,10 @@ npm run build    # static site in /out
 
 ## Structure
 
-- `app/page.tsx` — home (hero, work, about, testimonials, contact)
+- `app/page.tsx` — home (hero, work, contact)
+- `app/about/page.tsx` — about (portraits, story, experience, testimonials, contact)
 - `app/work/[slug]/page.tsx` — case study template
-- `components/` — header, footer, cursor, scroll "lighting", media/placeholder
+- `components/` — header, footer, contact block, cursor (ring, negative text, fading trail), scroll "lighting", media/placeholder
 - `app/globals.css` — design tokens and all styles
 - `public/images/` — portraits, original signature PNG, project images
 - `public/brand/` — vectorised signature logo in charcoal, burnt orange and white (SVG)

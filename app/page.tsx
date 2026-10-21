@@ -1,34 +1,27 @@
 import Link from "next/link";
 import { site, projects } from "@/content/site";
 import Media from "@/components/Media";
+import Contact from "@/components/Contact";
 
 export default function Home() {
   const { headline, accent } = site.hero;
   const lead = headline.endsWith(accent) ? headline.slice(0, -accent.length) : headline;
   return (
     <>
-      {/* Hero */}
+      {/* Hero: centred; the cursor turns the text negative as it passes over (data-invert) */}
       <section className="hero wrap">
-        <div className="hero__text">
-          <p className="hero__eyebrow">
-            <span className="hero__name">{site.name}</span>
-            <span className="status">{site.availability}</span>
-          </p>
-          <h1 className="hero__title">
-            {lead}
-            {lead !== headline && <em>{accent}</em>}
-          </h1>
-          <p className="hero__intro">{site.hero.intro}</p>
-          <p className="hero__actions">
-            <a className="button" href="#work" data-magnetic>See my work</a>
-            <a className="roll text-link" href={`mailto:${site.email}`}>
-              <span data-text="Get in touch">Get in touch</span>
-            </a>
-          </p>
-        </div>
-        <figure className="hero__portrait" data-lit>
-          <img src="/images/victor-portrait.webp" alt="Victor Chukwu, arms folded, in a rust sweater" width={1200} height={1500} />
-        </figure>
+        <p className="hero__name" data-invert>{site.name}</p>
+        <h1 className="hero__title" data-invert>
+          {lead}
+          {lead !== headline && <em>{accent}</em>}
+        </h1>
+        <p className="hero__intro" data-invert>{site.hero.intro}</p>
+        <p className="hero__actions">
+          <a className="button" href="#work" data-magnetic>See my work</a>
+          <a className="roll text-link" href="#contact">
+            <span data-text="Get in touch">Get in touch</span>
+          </a>
+        </p>
       </section>
 
       {/* Work */}
@@ -62,87 +55,7 @@ export default function Home() {
         </div>
       </section>
 
-      {/* About */}
-      <section id="about" className="section" data-lit>
-        <div className="rule" aria-hidden="true" />
-        <div className="wrap about">
-          <figure className="about__photo" data-lit>
-            <img src="/images/victor-about.webp" alt="Victor Chukwu looking up, hands in pockets" loading="lazy" width={1200} height={1500} />
-          </figure>
-          <div className="about__text">
-            <h2 className="section__title">About</h2>
-            <p className="about__lead">{site.about.heading}</p>
-            {site.about.body.map((t, i) => (
-              <p key={i}>{t}</p>
-            ))}
-          </div>
-        </div>
-
-        <div className="wrap narrow">
-          <h3 className="sub-title">Experience</h3>
-          <ol className="timeline">
-            {site.experience.map((e) => (
-              <li key={e.company}>
-                <p className="timeline__period">{e.period}</p>
-                <div>
-                  <p className="timeline__company">{e.company}</p>
-                  <p className="timeline__role">{e.role}</p>
-                  <p className="timeline__note">
-                    {e.note}
-                    {e.link && (
-                      <>
-                        {" "}
-                        <a className="inline-link" href={e.link.href} target="_blank" rel="noreferrer">{e.link.label}</a>
-                      </>
-                    )}
-                  </p>
-                </div>
-              </li>
-            ))}
-          </ol>
-        </div>
-      </section>
-
-      {/* Testimonials */}
-      <section className="section" aria-labelledby="kind-words" data-lit>
-        <div className="rule" aria-hidden="true" />
-        <div className="wrap narrow">
-          <h2 id="kind-words" className="section__title">Kind words</h2>
-          <div className="quotes">
-            {site.testimonials.map((t) => (
-              <figure key={t.name} className="quote">
-                <blockquote>
-                  <p>{t.quote}</p>
-                </blockquote>
-                <figcaption>
-                  <span className="quote__name">{t.name}</span>
-                  <span className="quote__role">{t.role}</span>
-                </figcaption>
-              </figure>
-            ))}
-          </div>
-        </div>
-      </section>
-
-      {/* Contact */}
-      <section id="contact" className="section" data-lit>
-        <div className="rule" aria-hidden="true" />
-        <div className="wrap narrow contact">
-          <h2 className="section__title">Contact</h2>
-          <p className="contact__lead">
-            I'm open to full-time product design roles at startups, fintech and SaaS companies: local, remote or international.
-          </p>
-          <a className="contact__email" href={`mailto:${site.email}`}>{site.email}</a>
-          <p className="contact__links">
-            {site.socials.map((s) => (
-              <a key={s.href} className="button button--ghost" href={s.href} target="_blank" rel="noreferrer" data-magnetic>{s.label}</a>
-            ))}
-            {site.cv && (
-              <a className="button" href={site.cv} download data-magnetic>Download CV</a>
-            )}
-          </p>
-        </div>
-      </section>
+      <Contact />
     </>
   );
 }

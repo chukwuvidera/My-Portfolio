@@ -170,37 +170,33 @@ main, .footer, .header { position: relative; z-index: 1; }
 /* ---------- Hero ---------- */
 
 .hero {
-  display: grid; grid-template-columns: minmax(0, 1.45fr) minmax(0, 0.75fr);
+  text-align: center;
+  padding-top: clamp(88px, 12vh, 150px); padding-bottom: clamp(104px, 14vh, 170px);
+}
+.hero__name { font-weight: 600; width: fit-content; margin: 0 auto 28px; }
+.hero__title {
+  font-family: var(--display);
+  font-size: clamp(2.75rem, 1.2rem + 5.6vw, 6.5rem);
+  font-weight: 600; line-height: 0.96; letter-spacing: -0.045em;
+  max-width: 13ch; margin-inline: auto; text-wrap: balance;
+}
+.hero__title em { font-style: normal; color: var(--rust); }
+.hero__intro { margin: 36px auto 0; max-width: 36rem; color: var(--body); text-wrap: pretty; }
+.hero__actions { margin-top: 40px; display: flex; flex-wrap: wrap; justify-content: center; align-items: center; gap: 28px; }
+
+/* ---------- About page intro ---------- */
+
+.about-hero {
+  display: grid; grid-template-columns: minmax(0, 1.3fr) minmax(0, 0.8fr);
   gap: 64px; align-items: end;
   padding-top: 88px; padding-bottom: 104px;
 }
-.hero__eyebrow {
-  display: flex; flex-wrap: wrap; align-items: center; gap: 10px 20px;
-  margin-bottom: 28px; font-size: 1rem;
+.about-hero__title {
+  font-family: var(--display); font-size: clamp(2.25rem, 1.3rem + 3vw, 4rem);
+  font-weight: 600; line-height: 1.02; letter-spacing: -0.035em; text-wrap: balance;
 }
-.hero__name { font-weight: 600; }
-.status {
-  display: inline-flex; align-items: center; gap: 8px;
-  padding: 5px 12px 5px 10px; border: 1px solid var(--rule); border-radius: 999px;
-  font-size: 0.875rem; color: var(--body);
-}
-.status::before {
-  content: ""; width: 7px; height: 7px; border-radius: 50%; background: var(--rust);
-  box-shadow: 0 0 0 0 color-mix(in srgb, var(--rust) 50%, transparent);
-  animation: pulse 2.4s var(--ease) infinite;
-}
-@keyframes pulse { 70%, 100% { box-shadow: 0 0 0 7px transparent; } }
-
-.hero__title {
-  font-family: var(--display);
-  font-size: clamp(2.75rem, 1.5rem + 4.4vw, 5.25rem);
-  font-weight: 600; line-height: 0.98; letter-spacing: -0.04em;
-  max-width: 11ch; text-wrap: balance;
-}
-.hero__title em { font-style: normal; color: var(--rust); }
-.hero__intro { margin-top: 32px; max-width: 34rem; color: var(--body); }
-.hero__actions { margin-top: 36px; display: flex; flex-wrap: wrap; align-items: center; gap: 28px; }
-.hero__portrait img { width: 100%; aspect-ratio: 4 / 5; object-fit: cover; border-radius: 4px; }
+.about-hero__intro { margin-top: 28px; max-width: 34rem; color: var(--body); }
+.about-hero__portrait img { width: 100%; aspect-ratio: 4 / 5; object-fit: cover; border-radius: 4px; }
 
 /* ---------- Sections ---------- */
 
@@ -506,6 +502,11 @@ main, .footer, .header { position: relative; z-index: 1; }
 }
 .cursor-ring.is-link span { width: 52px; height: 52px; border-color: var(--rust); }
 .cursor-ring.is-view span { width: 92px; height: 92px; background: var(--rust); border-color: var(--rust); font-size: 0.9375rem; }
+/* Over [data-invert] text, a white disc in difference mode shows what's beneath in negative */
+.cursor-ring.is-invert { mix-blend-mode: difference; }
+.cursor-ring.is-invert span { width: 150px; height: 150px; background: #fff; border-color: transparent; }
+/* Thin line that trails the pointer and fades from its tail */
+.cursor-trail { position: fixed; inset: 0; z-index: 999; pointer-events: none; }
 
 /* ---------- Small screens ---------- */
 
@@ -514,8 +515,9 @@ main, .footer, .header { position: relative; z-index: 1; }
   .nav { gap: 20px; }
   .header__logo .signature { height: 34px; }
   .cover { grid-template-rows: auto 1fr; }
-  .hero { grid-template-columns: 1fr; gap: 48px; padding-top: 56px; padding-bottom: 88px; }
-  .hero__portrait { max-width: 360px; }
+  .hero { padding-top: 64px; padding-bottom: 88px; }
+  .about-hero { grid-template-columns: 1fr; gap: 40px; padding-top: 56px; padding-bottom: 88px; }
+  .about-hero__portrait { max-width: 360px; }
   .section { padding-bottom: 96px; }
   .work-list { gap: 80px; }
   .work__info { grid-template-columns: 1fr; margin-top: 20px; }
