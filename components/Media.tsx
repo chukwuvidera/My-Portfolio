@@ -9,14 +9,16 @@ export default function Media({
   img,
   cover,
   reveal = false,
+  tilt = false,
 }: {
   img: Img;
   cover?: { title: string; meta: string };
   reveal?: boolean; // wipe in from the bottom when scrolled into view
+  tilt?: boolean; // bend gently towards the pointer on hover
 }) {
   const style = { aspectRatio: img.ratio ?? "16 / 10" };
   if (!img.src && !cover && !site.showImagePlaceholders) return null;
-  return (
+  const figure = (
     <figure className="media" data-lit data-reveal={reveal ? "clip" : undefined}>
       {img.src ? (
         <img src={img.src} alt={img.label} loading="lazy" style={style} />
@@ -32,5 +34,13 @@ export default function Media({
       )}
       {img.caption && <figcaption>{img.caption}</figcaption>}
     </figure>
+  );
+  // The tilt lives on a wrapper: the reveal animates the figure's own transform
+  return tilt ? (
+    <div className="media-tilt" data-tilt="0.6">
+      {figure}
+    </div>
+  ) : (
+    figure
   );
 }

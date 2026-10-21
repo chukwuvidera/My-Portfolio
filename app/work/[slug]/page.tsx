@@ -129,7 +129,7 @@ export default async function CaseStudy({ params }: { params: Promise<{ slug: st
           {b.images && (site.showImagePlaceholders || b.images.some((img) => img.src)) && (
             <div className={`wrap gallery ${b.images.length > 1 ? "gallery--grid" : ""}`}>
               {b.images.map((img) => (
-                <Media key={img.label} img={img} reveal />
+                <Media key={img.label} img={img} reveal tilt />
               ))}
             </div>
           )}

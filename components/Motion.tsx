@@ -13,7 +13,7 @@ import Lenis from "lenis";
  *     "converge" scattered words come together
  *     "parallax" 0 entering at the bottom, 1 leaving at the top
  * - [data-count]: the number counts up when it comes into view
- * - [data-tilt]: tilts towards the pointer
+ * - [data-tilt]: tilts towards the pointer; an optional value scales it (data-tilt="0.6")
  * - [data-depth]: inner layers drift with the pointer (--mx / --my, -1 → 1)
  * With reduced motion, everything shows in its final state and nothing moves.
  */
@@ -160,12 +160,13 @@ export default function Motion() {
 
     // Tilt towards the pointer
     document.querySelectorAll<HTMLElement>("[data-tilt]").forEach((el) => {
+      const k = parseFloat(el.dataset.tilt || "") || 1;
       const move = (e: PointerEvent) => {
         const r = el.getBoundingClientRect();
         const x = (e.clientX - r.left) / r.width - 0.5;
         const y = (e.clientY - r.top) / r.height - 0.5;
-        el.style.setProperty("--ry", `${(x * 7).toFixed(2)}deg`);
-        el.style.setProperty("--rx", `${(-y * 5).toFixed(2)}deg`);
+        el.style.setProperty("--ry", `${(x * 7 * k).toFixed(2)}deg`);
+        el.style.setProperty("--rx", `${(-y * 5 * k).toFixed(2)}deg`);
       };
       const leave = () => {
         el.style.setProperty("--ry", "0deg");
