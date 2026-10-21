@@ -287,7 +287,7 @@ export const projects: Project[] = [
     year: "Since 2023",
     highlight: "50k+ downloads on Google Play",
     tint: "#1f4637",
-    cover: { label: "Flitaa cover: redesigned app on phone mockups" },
+    cover: { label: "Flitaa onboarding, home and wallet screens", src: "/images/work/flitaa/cover.webp" },
     details: [
       { label: "Role", value: "Associate designer on the redesign, then design lead for the product" },
       { label: "Timeline", value: "Started 2023. Redesign launched in 2024" },
@@ -302,7 +302,7 @@ export const projects: Project[] = [
           "Flitaa is a mobile-first crypto trading app that helps users buy, sell and manage cryptocurrencies with confidence. The goal of the redesign was to make trading feel approachable for new users while staying powerful and reliable for experienced traders.",
           "Roqqu acquired Flitaa, announced publicly in 2025, to accelerate its entry into Kenya and the wider East African market.",
         ],
-        images: [{ label: "Flitaa home and portfolio", ratio: "16 / 9" }],
+        images: [{ label: "Flitaa home, wallet and asset screens", src: "/images/work/flitaa/home-and-portfolio.webp", ratio: "16 / 9" }],
       },
       {
         label: "Challenge",
@@ -336,10 +336,10 @@ export const projects: Project[] = [
           { title: "Mobile-first layouts made for quick decisions" },
         ],
         images: [
-          { label: "Onboarding", ratio: "16 / 9" },
-          { label: "Buy, sell and hold", ratio: "16 / 9" },
-          { label: "Referrals and rewards", ratio: "16 / 9" },
-          { label: "Notifications and activity", ratio: "16 / 9" },
+          { label: "Onboarding: welcome, sign up and account created", src: "/images/work/flitaa/onboarding.webp", ratio: "16 / 9" },
+          { label: "Buying Bitcoin: amount, confirm and success", src: "/images/work/flitaa/buy-sell-hold.webp", ratio: "16 / 9" },
+          { label: "Referrals: invite friends, withdraw earnings and success", src: "/images/work/flitaa/referrals.webp", ratio: "16 / 9" },
+          { label: "Notifications: inbox, announcement and empty state", src: "/images/work/flitaa/notifications.webp", ratio: "16 / 9" },
         ],
       },
       {
