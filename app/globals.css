@@ -310,7 +310,7 @@ main, .footer, .header { position: relative; z-index: 1; }
   max-width: 24ch; margin-bottom: 96px; text-wrap: balance;
 }
 .work__frame { transition: transform 0.6s var(--ease); will-change: transform; }
-.work__media { position: relative; border-radius: 6px; overflow: hidden; }
+.work__media { position: relative; border-radius: 32px; overflow: hidden; }
 .work__media .media img,
 .work__media .media__placeholder { aspect-ratio: 2 / 1 !important; }
 

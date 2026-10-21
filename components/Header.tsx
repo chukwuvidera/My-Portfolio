@@ -24,8 +24,13 @@ export default function Header() {
         </Link>
         <nav aria-label="Main">
           <ul className="nav">
+            <li style={{ ["--i" as string]: 0 }}>
+              <ThemeToggle className="nav__item nav__item--icon">
+                <Pixels />
+              </ThemeToggle>
+            </li>
             {nav.map((n, i) => (
-              <li key={n.label} style={{ ["--i" as string]: i }}>
+              <li key={n.label} style={{ ["--i" as string]: i + 1 }}>
                 {n.external ? (
                   <a href={n.href} className="nav__item" target="_blank" rel="noreferrer">
                     <Pixels />
@@ -39,11 +44,6 @@ export default function Header() {
                 )}
               </li>
             ))}
-            <li style={{ ["--i" as string]: nav.length }}>
-              <ThemeToggle className="nav__item nav__item--icon">
-                <Pixels />
-              </ThemeToggle>
-            </li>
           </ul>
         </nav>
       </div>
