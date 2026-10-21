@@ -1,26 +1,25 @@
 import Link from "next/link";
 import { site, projects } from "@/content/site";
 import Media from "@/components/Media";
-import Contact from "@/components/Contact";
 
 export default function Home() {
   const { headline, accent } = site.hero;
   const lead = headline.endsWith(accent) ? headline.slice(0, -accent.length) : headline;
   return (
     <>
-      {/* Hero: centred; the cursor turns the text negative as it passes over (data-invert) */}
+      {/* Hero */}
       <section className="hero wrap">
-        <p className="hero__name" data-invert>{site.name}</p>
-        <h1 className="hero__title" data-invert>
+        <p className="hero__name">{site.name}</p>
+        <h1 className="hero__title">
           {lead}
           {lead !== headline && <em>{accent}</em>}
         </h1>
-        <p className="hero__intro" data-invert>{site.hero.intro}</p>
+        <p className="hero__intro">{site.hero.intro}</p>
         <p className="hero__actions">
           <a className="button" href="#work" data-magnetic>See my work</a>
-          <a className="roll text-link" href="#contact">
+          <Link className="roll text-link" href="/about/#contact">
             <span data-text="Get in touch">Get in touch</span>
-          </a>
+          </Link>
         </p>
       </section>
 
@@ -55,7 +54,6 @@ export default function Home() {
         </div>
       </section>
 
-      <Contact />
     </>
   );
 }
