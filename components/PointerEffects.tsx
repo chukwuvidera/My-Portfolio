@@ -4,7 +4,7 @@ import { useEffect } from "react";
 /**
  * Pointer effects for mouse users who haven't asked for reduced motion:
  * - a thin line that starts at the pointer and fades from its tail
- * - the page grid brightens around the pointer and fades out when it rests
+ * - a soft brown glow sits under the pointer and fades out when it rests
  * - buttons marked [data-magnetic] lean towards the pointer
  * The system cursor is left as it is.
  */
@@ -19,15 +19,14 @@ export default function PointerEffects() {
     canvas.setAttribute("aria-hidden", "true");
     document.body.append(canvas);
     const ctx = canvas.getContext("2d");
-    const glow = document.querySelector<HTMLElement>(".grid__glow");
+    const glow = document.querySelector<HTMLElement>(".pointer-glow");
 
     const TRAIL_MS = 450; // how long a point of the trail stays visible
-    const GLOW_IDLE_MS = 500; // how long the grid stays bright after the pointer stops
+    const GLOW_IDLE_MS = 700; // how long the glow stays after the pointer stops
     const points: { x: number; y: number; t: number }[] = [];
     let trailDrawn = false;
     let raf = 0;
     let idle = 0;
-    let lastX = -1, lastY = -1;
     let magnet: HTMLElement | null = null;
     let colour = "";
     let colourTheme: string | undefined = "unset";
@@ -36,18 +35,12 @@ export default function PointerEffects() {
       if (magnet) magnet.style.transform = "";
       magnet = null;
     };
-    const placeGlow = () => {
-      glow?.style.setProperty("--gx", `${lastX + window.scrollX}px`);
-      glow?.style.setProperty("--gy", `${lastY + window.scrollY}px`);
-    };
 
     const move = (e: PointerEvent) => {
       const now = performance.now();
       for (const c of e.getCoalescedEvents?.() ?? [e]) points.push({ x: c.clientX, y: c.clientY, t: now });
-      lastX = e.clientX;
-      lastY = e.clientY;
-
-      placeGlow();
+      glow?.style.setProperty("--gx", `${e.clientX}px`);
+      glow?.style.setProperty("--gy", `${e.clientY}px`);
       glow?.classList.add("is-on");
       window.clearTimeout(idle);
       idle = window.setTimeout(() => glow?.classList.remove("is-on"), GLOW_IDLE_MS);
@@ -60,9 +53,6 @@ export default function PointerEffects() {
         m.style.transform = `translate(${(e.clientX - r.left - r.width / 2) * 0.25}px, ${(e.clientY - r.top - r.height / 2) * 0.35}px)`;
       }
       if (!raf) raf = requestAnimationFrame(draw);
-    };
-    const scroll = () => {
-      if (lastX >= 0) placeGlow();
     };
     const leave = () => {
       points.length = 0;
@@ -107,7 +97,6 @@ export default function PointerEffects() {
     };
 
     window.addEventListener("pointermove", move);
-    window.addEventListener("scroll", scroll, { passive: true });
     document.addEventListener("pointerleave", leave);
     return () => {
       cancelAnimationFrame(raf);
@@ -115,7 +104,6 @@ export default function PointerEffects() {
       release();
       canvas.remove();
       window.removeEventListener("pointermove", move);
-      window.removeEventListener("scroll", scroll);
       document.removeEventListener("pointerleave", leave);
     };
   }, []);

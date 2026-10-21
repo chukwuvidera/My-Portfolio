@@ -1,6 +1,7 @@
 import Link from "next/link";
 import { site, projects } from "@/content/site";
 import Media from "@/components/Media";
+import Button from "@/components/Button";
 
 export default function Home() {
   const { headline, accent } = site.hero;
@@ -16,7 +17,7 @@ export default function Home() {
         </h1>
         <p className="hero__intro">{site.hero.intro}</p>
         <p className="hero__actions">
-          <a className="button" href="#work" data-magnetic>See my work</a>
+          <Button href="#work" label="See my work" />
           <Link className="roll text-link" href="/about/#contact">
             <span data-text="Get in touch">Get in touch</span>
           </Link>
@@ -34,6 +35,10 @@ export default function Home() {
                 <Link href={`/work/${p.slug}/`} className="work__link" data-cursor="view">
                   <div className="work__media" style={{ ["--tint" as string]: p.tint }}>
                     <Media img={p.cover} cover={{ title: p.title, meta: p.highlight }} />
+                    <div className="work__reveal" aria-hidden="true">
+                      <span className="work__reveal-title">{p.title}</span>
+                      <span className="work__reveal-cta">View case study →</span>
+                    </div>
                   </div>
                   <div className="work__info">
                     <h3 className="work__title">

@@ -45,9 +45,7 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
         <a className="skip" href="#main">
           Skip to content
         </a>
-        <div className="grid" aria-hidden="true">
-          <div className="grid__glow" />
-        </div>
+        <div className="pointer-glow" aria-hidden="true" />
         <div className="guides" aria-hidden="true" />
         <Header />
         <main id="main">{children}</main>

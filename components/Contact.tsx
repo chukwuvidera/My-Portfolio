@@ -1,4 +1,5 @@
 import { site } from "@/content/site";
+import Button from "./Button";
 
 /** Closing contact block, shared by the home and About pages. */
 export default function Contact() {
@@ -13,10 +14,10 @@ export default function Contact() {
         <a className="contact__email" href={`mailto:${site.email}`}>{site.email}</a>
         <p className="contact__links">
           {site.socials.map((s) => (
-            <a key={s.href} className="button button--ghost" href={s.href} target="_blank" rel="noreferrer" data-magnetic>{s.label}</a>
+            <Button key={s.href} href={s.href} label={s.label} ghost external />
           ))}
           {site.cv && (
-            <a className="button" href={site.cv} download data-magnetic>Download CV</a>
+            <Button href={site.cv} label="Download CV" download />
           )}
         </p>
       </div>

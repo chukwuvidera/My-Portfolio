@@ -30,7 +30,7 @@ npm run build    # static site in /out
 - `app/page.tsx` — home (hero, work)
 - `app/about/page.tsx` — about (portraits, story, experience, testimonials, contact)
 - `app/work/[slug]/page.tsx` — case study template
-- `components/` — header (ruled nav cells, theme toggle), footer, contact block, pointer effects (fading trail, grid glow, magnetic buttons), scroll "lighting", media/placeholder
+- `components/` — header (ruled nav cells, theme toggle), footer, contact block, button (pixel-fill hover), pointer effects (fading trail, brown glow, magnetic buttons), scroll "lighting", media/placeholder
 - `app/globals.css` — design tokens (light and dark) and all styles
 - `public/images/` — portraits, original signature PNG, project images
 - `public/brand/` — vectorised signature logo in charcoal, burnt orange and white (SVG)

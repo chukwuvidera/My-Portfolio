@@ -4,6 +4,7 @@ import { usePathname } from "next/navigation";
 import { site } from "@/content/site";
 import Signature from "./Signature";
 import ThemeToggle from "./ThemeToggle";
+import { FlipLabel, Pixels } from "./Flip";
 
 // Until the CV PDF is added in content/site.ts, "Resume" opens LinkedIn
 const linkedin = site.socials.find((s) => s.label === "LinkedIn")?.href ?? "/about/";
@@ -12,30 +13,6 @@ const nav = [
   { label: "Resume", href: site.cv || linkedin, external: true },
   { label: "About", href: "/about/", current: (p: string) => p.startsWith("/about") },
 ];
-
-/** A 10 × 4 grid of squares that fill in a left-to-right dissolve on hover. */
-function Pixels() {
-  return (
-    <span className="nav__pixels" aria-hidden="true">
-      {Array.from({ length: 40 }, (_, i) => {
-        const col = i % 10;
-        const jitter = ((i * 37) % 11) * 12; // fixed scatter, so server and client match
-        return <i key={i} style={{ ["--d" as string]: `${col * 26 + jitter}ms` }} />;
-      })}
-    </span>
-  );
-}
-
-function Label({ text }: { text: string }) {
-  return (
-    <span className="nav__label">
-      <span className="nav__roll">
-        <span>{text}</span>
-        <span aria-hidden="true">{text}</span>
-      </span>
-    </span>
-  );
-}
 
 export default function Header() {
   const path = usePathname() ?? "/";
@@ -52,12 +29,12 @@ export default function Header() {
                 {n.external ? (
                   <a href={n.href} className="nav__item" target="_blank" rel="noreferrer">
                     <Pixels />
-                    <Label text={n.label} />
+                    <FlipLabel text={n.label} />
                   </a>
                 ) : (
                   <Link href={n.href} className="nav__item" aria-current={n.current?.(path) ? "page" : undefined}>
                     <Pixels />
-                    <Label text={n.label} />
+                    <FlipLabel text={n.label} />
                   </Link>
                 )}
               </li>

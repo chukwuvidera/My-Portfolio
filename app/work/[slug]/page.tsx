@@ -3,6 +3,7 @@ import { notFound } from "next/navigation";
 import type { Metadata } from "next";
 import { site, projects } from "@/content/site";
 import Media from "@/components/Media";
+import Button from "@/components/Button";
 
 export function generateStaticParams() {
   return projects.map((p) => ({ slug: p.slug }));
@@ -64,7 +65,7 @@ export default async function CaseStudy({ params }: { params: Promise<{ slug: st
               </dl>
               {p.link && (
                 <p className="card__action">
-                  <a className="button" href={p.link.href} target="_blank" rel="noreferrer" data-magnetic>{p.link.label}</a>
+                  <Button href={p.link.href} label={p.link.label} external />
                 </p>
               )}
             </div>
