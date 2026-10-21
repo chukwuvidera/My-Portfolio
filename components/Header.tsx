@@ -24,8 +24,8 @@ export default function Header() {
         </Link>
         <nav aria-label="Main">
           <ul className="nav">
-            {nav.map((n) => (
-              <li key={n.label}>
+            {nav.map((n, i) => (
+              <li key={n.label} style={{ ["--i" as string]: i }}>
                 {n.external ? (
                   <a href={n.href} className="nav__item" target="_blank" rel="noreferrer">
                     <Pixels />
@@ -39,7 +39,7 @@ export default function Header() {
                 )}
               </li>
             ))}
-            <li>
+            <li style={{ ["--i" as string]: nav.length }}>
               <ThemeToggle className="nav__item nav__item--icon">
                 <Pixels />
               </ThemeToggle>

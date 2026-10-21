@@ -4,7 +4,7 @@ import Signature from "./Signature";
 export default function Footer() {
   return (
     <footer className="footer">
-      <div className="wrap footer__row">
+      <div className="wrap footer__row" data-reveal>
         <p>
           <a className="roll" href={`mailto:${site.email}`}>
             <span data-text={site.email}>{site.email}</span>

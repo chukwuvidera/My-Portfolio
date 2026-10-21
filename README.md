@@ -31,7 +31,10 @@ npm run build    # static site in /out
 - `app/about/page.tsx` — about (portraits, story, experience, testimonials, contact)
 - `app/work/[slug]/page.tsx` — case study template
 - `components/` — header (ruled nav cells, theme toggle), footer, contact block, button (pixel-fill hover), pointer effects (brown glow, magnetic buttons), scroll "lighting", media/placeholder
-- `app/globals.css` — design tokens (light and dark) and all styles
+- `components/Motion.tsx` + `components/Split.tsx` — smooth scrolling, scroll reveals, words that light up or
+  assemble on scroll, count-ups, card tilt, pointer depth (all off for visitors who prefer reduced motion)
+- `app/template.tsx` — page-enter transition
+- `app/globals.css` — design tokens (light and dark) and all styles, including the Motion section
 - `public/images/` — portraits, original signature PNG, project images
 - `public/brand/` — vectorised signature logo in charcoal, burnt orange and white (SVG)
 

@@ -57,6 +57,9 @@ export const site = {
     { label: "LinkedIn", href: "https://www.linkedin.com/in/chidera-victor-chukwu/" },
     { label: "Behance", href: "https://www.behance.net/victor-chukwu" },
   ],
+  // Shown above the case studies; its words light up as you scroll
+  workIntro:
+    "Four products across crypto infrastructure, Web3, trading and email marketing, each designed to make complex systems feel simple.",
   hero: {
     headline: "Product designer and Strategist",
     accent: "Strategist", // the part of the headline shown in burnt orange

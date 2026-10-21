@@ -2,12 +2,14 @@ import type { Metadata, Viewport } from "next";
 import "@fontsource-variable/bricolage-grotesque/index.css";
 import "@fontsource-variable/hanken-grotesk/index.css";
 import "@fontsource-variable/geist-mono/index.css";
+import "lenis/dist/lenis.css";
 import "./globals.css";
 import { site } from "@/content/site";
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
 import PointerEffects from "@/components/PointerEffects";
 import Lighting from "@/components/Lighting";
+import Motion from "@/components/Motion";
 
 export const metadata: Metadata = {
   // The Vercel address until victorchukwu.design is bought and connected
@@ -52,6 +54,7 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
         <Footer />
         <PointerEffects />
         <Lighting />
+        <Motion />
       </body>
     </html>
   );

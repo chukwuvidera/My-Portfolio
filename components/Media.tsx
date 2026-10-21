@@ -5,11 +5,19 @@ import { site, type Img } from "@/content/site";
  * - covers get a designed placeholder (tint, grid, grain and the project title)
  * - other slots get a labelled placeholder, or nothing if placeholders are switched off
  */
-export default function Media({ img, cover }: { img: Img; cover?: { title: string; meta: string } }) {
+export default function Media({
+  img,
+  cover,
+  reveal = false,
+}: {
+  img: Img;
+  cover?: { title: string; meta: string };
+  reveal?: boolean; // wipe in from the bottom when scrolled into view
+}) {
   const style = { aspectRatio: img.ratio ?? "16 / 10" };
   if (!img.src && !cover && !site.showImagePlaceholders) return null;
   return (
-    <figure className="media" data-lit>
+    <figure className="media" data-lit data-reveal={reveal ? "clip" : undefined}>
       {img.src ? (
         <img src={img.src} alt={img.label} loading="lazy" style={style} />
       ) : cover ? (
