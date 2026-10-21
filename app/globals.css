@@ -214,6 +214,14 @@ main, .footer, .header { position: relative; z-index: 1; }
 .nav__item[aria-current="page"] .flip::after { transform: translateY(-50%) scale(1); }
 
 .nav__item--icon { width: 56px; align-items: center; justify-content: center; padding: 0; }
+
+/* Phones only: menu button and the panel it opens (see the 640px block) */
+.nav .nav__menu, .mobile-menu { display: none; }
+.burger { position: relative; display: grid; gap: 6px; width: 18px; }
+.burger span { display: block; height: 1.5px; background: currentColor; transition: transform 0.4s var(--ease); }
+.is-menu-open .burger span:first-child { transform: translateY(3.75px) rotate(45deg); }
+.is-menu-open .burger span:last-child { transform: translateY(-3.75px) rotate(-45deg); }
+html.menu-open { overflow: hidden; }
 .theme-icon {
   position: relative; width: 18px; height: 18px;
   fill: none; stroke: currentColor; stroke-width: 1.5; stroke-linecap: round; stroke-linejoin: round;
@@ -831,6 +839,44 @@ html.lightbox-open { overflow: hidden; }
 
 /* Phones: everything stacks into one column */
 @media (max-width: 640px) {
+  /* nav links move into the menu panel */
+  .nav .nav__link { display: none; }
+  .nav .nav__menu { display: flex; }
+  .header.is-menu-open { background: var(--paper); }
+  .mobile-menu {
+    display: flex; flex-direction: column; justify-content: space-between;
+    position: absolute; top: 100%; left: 0; right: 0;
+    height: calc(100vh - 59px); height: calc(100dvh - 59px); /* header is 59px on phones */
+    padding: 8px var(--pad) 28px; background: var(--paper); overflow-y: auto;
+    clip-path: inset(0 0 100% 0); visibility: hidden;
+    transition: clip-path 0.6s cubic-bezier(0.7, 0, 0.2, 1), visibility 0s linear 0.6s;
+  }
+  .is-menu-open .mobile-menu { clip-path: inset(0 0 0 0); visibility: visible; transition-delay: 0s; }
+  .mobile-menu__list li {
+    border-bottom: 1px solid var(--rule);
+    opacity: 0; transform: translateY(24px);
+    transition: opacity 0.5s var(--ease), transform 0.6s var(--ease);
+  }
+  .is-menu-open .mobile-menu__list li { opacity: 1; transform: none; transition-delay: calc(150ms + var(--i) * 70ms); }
+  .mobile-menu__link { display: flex; align-items: center; gap: 16px; padding: 22px 0; color: var(--ink); }
+  .mobile-menu__index { font-family: var(--mono); font-size: 0.75rem; color: var(--graphite); }
+  .mobile-menu__label {
+    flex: 1; font-family: var(--display); font-weight: 600;
+    font-size: clamp(2.25rem, 1.5rem + 4vw, 3rem); line-height: 1; letter-spacing: -0.035em;
+  }
+  .mobile-menu__link[aria-current="page"] .mobile-menu__label { color: var(--rust); }
+  .mobile-menu__arrow { width: 26px; height: 26px; fill: none; stroke: currentColor; stroke-width: 1.4; }
+  .mobile-menu__foot {
+    display: grid; gap: 10px; padding-top: 24px;
+    font-family: var(--mono); font-size: 0.75rem; letter-spacing: 0.04em; text-transform: uppercase; color: var(--graphite);
+  }
+  .mobile-menu__foot p { display: flex; gap: 20px; }
+  .mobile-menu__foot a { color: var(--ink); }
+
+  /* taller case study cards on the home page */
+  .work__media .media img,
+  .work__media .media__placeholder { aspect-ratio: 4 / 3 !important; }
+
   .about-hero, .about { grid-template-columns: 1fr; }
   .about-hero__portrait, .about__photo { max-width: 360px; }
   .timeline li { grid-template-columns: 1fr; gap: 6px; }
