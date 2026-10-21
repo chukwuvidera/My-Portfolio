@@ -23,39 +23,76 @@ export default async function CaseStudy({ params }: { params: Promise<{ slug: st
 
   return (
     <article className="case">
-      <header className="wrap narrow case__head">
-        <Link href="/#work" className="back">
-          All work
-        </Link>
-        <p className="case__eyebrow">
-          {p.company}, {p.year}
-        </p>
-        <h1 className="case__title">{p.headline}</h1>
-        <p className="case__summary">{p.summary}</p>
-        <p className="case__stat">{p.highlight}</p>
+      {/* Full-width hero: tint, grain and the cover, cropped by the bottom edge */}
+      <header className="case-hero" style={{ ["--tint" as string]: p.tint }}>
+        <div className="case-hero__inner">
+          <Link href="/#work" className="back back--light">
+            All work
+          </Link>
+          <p className="case-hero__eyebrow">{p.company}</p>
+          <h1 className="case-hero__title">{p.headline}</h1>
+          <ul className="case-hero__tags">
+            {p.tags.map((t) => (
+              <li key={t}>{t}</li>
+            ))}
+          </ul>
+          <div className="case-hero__shot">
+            <Media img={p.cover} cover={{ title: p.title, meta: "Case study" }} />
+          </div>
+        </div>
       </header>
 
-      <div className="wrap">
-        <div className="case__hero" style={{ ["--tint" as string]: p.tint }}>
-          <Media img={p.cover} cover={{ title: p.title, meta: "Case study" }} />
-        </div>
-      </div>
-
-      <div className="wrap narrow">
-        <dl className="details">
-          {p.details.map((d) => (
-            <div key={d.label}>
-              <dt>{d.label}</dt>
-              <dd>{d.value}</dd>
+      {/* Overview cards */}
+      <section className="overview" aria-label="Overview">
+        <div className="overview__grid">
+          <div className="overview__col">
+            <div className="card">
+              <h2 className="card__title">
+                Product <span>{p.title}</span>
+              </h2>
+              <p className="card__text">{p.overview}</p>
             </div>
-          ))}
-        </dl>
-        {p.link && (
-          <p className="case__visit">
-            <a className="button" href={p.link.href} target="_blank" rel="noreferrer" data-magnetic>{p.link.label}</a>
-          </p>
-        )}
-      </div>
+            <div className="card">
+              <h2 className="card__title">Details</h2>
+              <dl className="facts">
+                {p.details.map((d) => (
+                  <div key={d.label}>
+                    <dt>{d.label}</dt>
+                    <dd>{d.value}</dd>
+                  </div>
+                ))}
+              </dl>
+              {p.link && (
+                <p className="card__action">
+                  <a className="button" href={p.link.href} target="_blank" rel="noreferrer" data-magnetic>{p.link.label}</a>
+                </p>
+              )}
+            </div>
+          </div>
+          <div className="card card--rows">
+            {(["problem", "solution", "result"] as const).map((k) => (
+              <div key={k} className="card__row">
+                <h2 className="card__title">
+                  {k[0].toUpperCase() + k.slice(1)} <span>{p.summaryCards[k].title}</span>
+                </h2>
+                <p className="card__text">{p.summaryCards[k].text}</p>
+              </div>
+            ))}
+          </div>
+        </div>
+        <div className="card impact">
+          <h2 className="card__title">Impact</h2>
+          <ul className="impact__list">
+            {p.impact.map((m) => (
+              <li key={m.label}>
+                <p className="impact__value">{m.value}</p>
+                <p className="impact__label">{m.label}</p>
+                <p className="impact__caption">{m.caption}</p>
+              </li>
+            ))}
+          </ul>
+        </div>
+      </section>
 
       {p.blocks.map((b) => (
         <section key={b.label} className="block" data-lit>

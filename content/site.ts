@@ -22,6 +22,8 @@ export type Block = {
   images?: Img[];
 };
 
+export type Card = { title: string; text: string };
+
 export type Project = {
   slug: string;
   title: string;
@@ -34,6 +36,11 @@ export type Project = {
   cover: Img;
   details: { label: string; value: string }[];
   link?: { label: string; href: string };
+  // Case study overview, shown under the hero
+  tags: string[]; // the row under the hero title
+  overview: string; // the "Product" card
+  summaryCards: { problem: Card; solution: Card; result: Card };
+  impact: { value: string; label: string; caption: string }[]; // up to three stats
   blocks: Block[];
 };
 
@@ -115,6 +122,28 @@ export const projects: Project[] = [
     highlight: "15+ businesses integrated",
     tint: "#27354d",
     cover: { label: "RAS cover: console overview on a laptop mockup" },
+    tags: ["0 to 1 product design", "Developer platform", "2023 – present", "Live"],
+    overview:
+      "Roqqu API Services lets businesses and developers build Roqqu's crypto infrastructure, such as wallets, transactions and financial services, directly into their own products through APIs.",
+    summaryCards: {
+      problem: {
+        title: "Built for consumers",
+        text: "Roqqu's services were built for end users. To support crypto businesses and become an infrastructure player, it needed a product that made complex backend systems usable by developers.",
+      },
+      solution: {
+        title: "A calm developer console",
+        text: "I led the research, UX strategy and dashboard design for a console where merchants manage wallets, transactions, API keys and webhooks, plus the internal tool Roqqu uses to oversee them.",
+      },
+      result: {
+        title: "Infrastructure-ready",
+        text: "Roqqu's first external-facing infrastructure platform: stable, still improving, and integrated by 15+ businesses.",
+      },
+    },
+    impact: [
+      { value: "15+", label: "Businesses integrated", caption: "And growing as the platform improves" },
+      { value: "1st", label: "Infrastructure platform", caption: "Roqqu's first product for other businesses to build on" },
+      { value: "2", label: "Products designed", caption: "The merchant console and the internal management tool" },
+    ],
     details: [
       { label: "Role", value: "Lead product designer, from zero to shipped" },
       { label: "Team", value: "A second designer for the first year, two engineers, product and engineering stakeholders" },
@@ -218,6 +247,28 @@ export const projects: Project[] = [
     highlight: "19,000+ users",
     tint: "#3a2d5a",
     cover: { label: "Roqqu Web3 cover: wallet home on phone mockups" },
+    tags: ["0 to 1 product design", "Sole designer", "2025", "Live"],
+    overview:
+      "Roqqu's Web3 wallet lets new and existing users take part in on-chain activity directly through their Roqqu account, and hold their own assets in self-custody alongside it.",
+    summaryCards: {
+      problem: {
+        title: "Leaving to go on-chain",
+        text: "To swap on-chain, bridge between networks or use a dApp, Roqqu users had to switch to separate wallets like MetaMask or Trust Wallet.",
+      },
+      solution: {
+        title: "Web3 in a familiar app",
+        text: "I researched how Web3 really works and turned it into patterns Roqqu users already knew: create or connect a wallet, send, receive, swap, bridge and use dApps.",
+      },
+      result: {
+        title: "Adopted at scale",
+        text: "Launched in 2025 and now used by 19,000+ people, on a foundation the team keeps building on.",
+      },
+    },
+    impact: [
+      { value: "19,000+", label: "Users", caption: "On Roqqu's Web3 wallet" },
+      { value: "1", label: "Account", caption: "For custodial and on-chain activity" },
+      { value: "0 → 1", label: "Built from scratch", caption: "As the sole product designer" },
+    ],
     details: [
       { label: "Role", value: "Sole product designer, from scratch" },
       { label: "Team", value: "Roqqu product and engineering" },
@@ -288,6 +339,28 @@ export const projects: Project[] = [
     highlight: "50k+ downloads on Google Play",
     tint: "#1f4637",
     cover: { label: "Flitaa onboarding, home and wallet screens", src: "/images/work/flitaa/cover.webp" },
+    tags: ["Redesign", "Design system", "Since 2023", "Live"],
+    overview:
+      "Flitaa is a mobile-first crypto trading app that helps users buy, sell and manage cryptocurrencies with confidence, approachable for new users and reliable for experienced traders.",
+    summaryCards: {
+      problem: {
+        title: "Crypto overwhelms",
+        text: "A high learning curve, sensitive financial actions and market volatility made trading feel intimidating for people new to crypto.",
+      },
+      solution: {
+        title: "Calm, trust-first trading",
+        text: "A redesign built on three principles: reduce cognitive load, design for trust, and guide without overwhelming, localised for each market Flitaa serves.",
+      },
+      result: {
+        title: "A clear relaunch",
+        text: "Relaunched in 2024 with smoother onboarding, predictable trading flows and a scalable design system.",
+      },
+    },
+    impact: [
+      { value: "50k+", label: "Downloads", caption: "On Google Play" },
+      { value: "2024", label: "Relaunch", caption: "The redesign shipped and went live" },
+      { value: "2025", label: "Acquired by Roqqu", caption: "To accelerate its entry into East Africa" },
+    ],
     details: [
       { label: "Role", value: "Associate designer on the redesign, then design lead for the product" },
       { label: "Timeline", value: "Started 2023. Redesign launched in 2024" },
@@ -366,6 +439,28 @@ export const projects: Project[] = [
     highlight: "Helped win and keep clients",
     tint: "#5a2f1c",
     cover: { label: "MailDrip cover: dashboard and email builder" },
+    tags: ["Product design", "Design leadership", "2021 – 2025", "Live"],
+    overview:
+      "MailDrip is an email marketing platform that helps small and growing businesses, creators and personal brands create, send and manage campaigns without complexity.",
+    summaryCards: {
+      problem: {
+        title: "Too simple or too complex",
+        text: "Email tools are either too simple to scale or too complex for everyday users. MailDrip needed to sit in the middle.",
+      },
+      solution: {
+        title: "Scalable simplicity",
+        text: "I redesigned the dashboard and designed the email builder, campaign, contact and instant email flows, keeping them guided and clean as features grew.",
+      },
+      result: {
+        title: "Clients won and kept",
+        text: "Easier sending and campaign creation helped Charisol close and retain several clients.",
+      },
+    },
+    impact: [
+      { value: "Intern → Lead", label: "Grew with the product", caption: "From design intern to lead designer" },
+      { value: "~3 years", label: "Leading the design team", caption: "Training and mentoring Charisol's designers" },
+      { value: "Several", label: "Clients won and kept", caption: "Through easier sending and campaign creation" },
+    ],
     link: { label: "Visit MailDrip", href: "https://app.maildrip.io/" },
     details: [
       { label: "Role", value: "Product design intern, then lead designer" },
