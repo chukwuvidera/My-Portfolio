@@ -240,11 +240,18 @@ export const projects: Project[] = [
         label: "Internal tool",
         heading: "Behind the console: managing merchants.",
         body: [
-          "Alongside the merchant console, I designed the internal management tool Roqqu's team uses to oversee merchant activity and manage roles and permissions.",
+          "Alongside the merchant console, I designed the internal management tool Roqqu's team uses to oversee merchant activity and permissions, and to keep an eye on the health of every RAS service.",
+        ],
+        list: [
+          { title: "Merchant details.", text: "Each merchant's profile, subscription plan and balances across every asset, with the option to block an account." },
+          { title: "Merchant transactions.", text: "Every transaction for a merchant, filterable by date, status, coin and type, and exportable." },
+          { title: "Service monitoring.", text: "Uptime, latency and health for each RAS service, with ping and on/off controls, and a status page." },
         ],
         images: [
-          { label: "Internal tool: merchant activity" },
-          { label: "Internal tool: roles and permissions" },
+          { label: "Internal tool: merchant details and balances", src: "/images/work/ras/internal-merchant-details.webp" },
+          { label: "Internal tool: a merchant's transactions", src: "/images/work/ras/internal-merchant-transactions.webp" },
+          { label: "Internal tool: service monitoring", src: "/images/work/ras/internal-service-monitoring.webp" },
+          { label: "Internal tool: status page with 90-day uptime", src: "/images/work/ras/internal-status-page.webp" },
         ],
       },
       {
