@@ -281,7 +281,7 @@ export const projects: Project[] = [
   {
     slug: "flitaa",
     title: "Flitaa",
-    summary: "A calm, trust-focused crypto trading app for East Africa.",
+    summary: "A calm, trust-focused crypto trading app for African markets.",
     headline: "Designing a simple, trust-focused crypto trading experience",
     company: "Flitaa, a Roqqu company",
     year: "Since 2023",
@@ -327,7 +327,7 @@ export const projects: Project[] = [
         label: "Solution",
         heading: "A fresh look that keeps people calm while they trade.",
         body: [
-          "The redesign was localised for East African users, with custom branded assets, local language, prices in KES, and M-Pesa as a payment method.",
+          "The redesign was localised for each market Flitaa serves, with custom branded assets, local language, prices in local currencies, and familiar local payment methods.",
         ],
         list: [
           { title: "A clear visual hierarchy around prices and balances" },
