@@ -33,6 +33,7 @@ export type Project = {
   year: string;
   highlight: string; // headline result shown on the home page
   tint: string; // hero gradient colour
+  coverText?: "light"; // white title on the home card's hover panel, for dark covers
   cover: Img;
   details: { label: string; value: string }[];
   link?: { label: string; href: string };
@@ -125,6 +126,7 @@ export const projects: Project[] = [
     year: "2023 – present",
     highlight: "15+ businesses integrated",
     tint: "#27354d",
+    coverText: "light",
     cover: { label: "RAS console overview in front of the new Stocks page", src: "/images/work/ras/cover.webp" },
     tags: ["0 to 1 product design", "Developer platform", "2023 – present", "Live"],
     overview:
@@ -268,6 +270,7 @@ export const projects: Project[] = [
     year: "2025",
     highlight: "19,000+ users",
     tint: "#3a2d5a",
+    coverText: "light",
     cover: { label: "Roqqu Web3 cover: wallet home on phone mockups" },
     tags: ["0 to 1 product design", "Sole designer", "2025", "Live"],
     overview:

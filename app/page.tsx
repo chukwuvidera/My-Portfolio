@@ -58,7 +58,7 @@ export default function Home() {
                       data-scrub="parallax"
                     >
                       <Media img={p.cover} cover={{ title: p.title, meta: p.highlight }} />
-                      <div className="work__reveal" aria-hidden="true">
+                      <div className={`work__reveal${p.coverText === "light" ? " work__reveal--light-text" : ""}`} aria-hidden="true">
                         <span className="work__reveal-title">{p.title}</span>
                         <span className="work__reveal-cta">View case study →</span>
                       </div>

@@ -176,7 +176,7 @@ main, .footer, .header { position: relative; z-index: 1; }
 .nav { display: flex; height: 56px; }
 .nav li { display: flex; }
 .nav__item {
-  position: relative; display: flex; align-items: flex-start;
+  position: relative; display: flex; align-items: center; justify-content: center;
   width: 140px; padding: 12px 14px; overflow: hidden;
   border: 0; border-left: 1px solid var(--rule); background: none; cursor: pointer;
   font-family: var(--mono); font-size: 0.75rem; letter-spacing: 0.04em; text-transform: uppercase;
@@ -204,12 +204,14 @@ main, .footer, .header { position: relative; z-index: 1; }
 .flip__roll > span { display: block; transition: transform 0.48s cubic-bezier(0.625, 0.05, 0, 1); }
 :is(.nav__item, .button):is(:hover, :focus-visible) .flip__roll > span { transform: translateY(-100%); }
 /* small square: on hover, and marking the current page */
+/* sits just after the label, outside the flow, so the label itself stays centred */
 .flip::after {
-  content: ""; width: 7px; height: 7px; background: var(--rust);
-  transform: scale(0); transition: transform 0.3s var(--ease) 0.1s;
+  content: ""; position: absolute; left: calc(100% + 8px); top: 50%;
+  width: 7px; height: 7px; background: var(--rust);
+  transform: translateY(-50%) scale(0); transition: transform 0.3s var(--ease) 0.1s;
 }
 :is(.nav__item, .button):is(:hover, :focus-visible) .flip::after,
-.nav__item[aria-current="page"] .flip::after { transform: scale(1); }
+.nav__item[aria-current="page"] .flip::after { transform: translateY(-50%) scale(1); }
 
 .nav__item--icon { width: 56px; align-items: center; justify-content: center; padding: 0; }
 .theme-icon {
@@ -301,7 +303,7 @@ main, .footer, .header { position: relative; z-index: 1; }
 
 /* ---------- Work list ---------- */
 
-.work-list { display: grid; gap: 112px; }
+.work-list { display: grid; gap: 150px; }
 .work { transition: filter 0.5s var(--ease), opacity 0.5s var(--ease); }
 .work__link { display: block; }
 .work__statement {
@@ -333,6 +335,10 @@ main, .footer, .header { position: relative; z-index: 1; }
   color: var(--ink);
 }
 .work__link:is(:hover, :focus-visible) .work__reveal { transform: none; }
+/* on dark covers: a darker panel with white text */
+.work__reveal--light-text { background: rgba(10, 12, 18, 0.34); border-top-color: rgba(255, 255, 255, 0.16); }
+.work__reveal--light-text .work__reveal-title,
+.work__reveal--light-text .work__reveal-cta { color: #fff; }
 .work__link:is(:hover, :focus-visible) .cover__title { opacity: 0; }
 .work__media img { transition: transform 0.8s var(--ease), filter 1.2s var(--ease), opacity 1.2s var(--ease); }
 .work__link:hover .work__media img { transform: scale(1.02); }
@@ -735,16 +741,16 @@ main, .footer, .header { position: relative; z-index: 1; }
   .header__logo { padding-inline: 10px; }
   .header__logo .signature { height: 28px; }
   .nav { height: 48px; }
-  .nav__item { width: auto; min-width: 64px; padding: 10px 18px 10px 10px; font-size: 0.6875rem; }
+  .nav__item { width: auto; min-width: 64px; padding: 10px 14px; font-size: 0.6875rem; }
   .nav__item .flip { gap: 6px; }
-  .nav__item .flip::after { width: 5px; height: 5px; }
+  .nav__item .flip::after { width: 5px; height: 5px; left: calc(100% + 5px); }
   .nav__item--icon { width: 44px; min-width: 44px; padding: 0; }
   .cover { grid-template-rows: auto 1fr; }
   .hero { padding-top: 64px; padding-bottom: 88px; }
   .about-hero { grid-template-columns: 1fr; gap: 40px; padding-top: 56px; padding-bottom: 88px; }
   .about-hero__portrait { max-width: 360px; }
   .section { padding-bottom: 96px; }
-  .work-list { gap: 80px; }
+  .work-list { gap: 100px; }
   .work__info { grid-template-columns: 1fr; margin-top: 20px; }
   .about { grid-template-columns: 1fr; gap: 40px; }
   .about__photo { max-width: 360px; }
