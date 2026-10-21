@@ -12,7 +12,7 @@ export default function About() {
         <div className="about-hero__text">
           <p className="section__title">About</p>
           <h1 className="about-hero__title">{site.about.heading}</h1>
-          <p className="about-hero__intro">{site.hero.intro}</p>
+          <p className="about-hero__intro">{site.about.intro}</p>
         </div>
         <figure className="about-hero__portrait" data-lit>
           <img src="/images/victor-portrait.webp" alt="Victor Chukwu, arms folded, in a rust sweater" width={1200} height={1500} />

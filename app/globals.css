@@ -341,10 +341,6 @@ main, .footer, .header { position: relative; z-index: 1; }
 }
 .work__link:hover .work__title { color: var(--rust); }
 .work__summary { color: var(--body); max-width: 34rem; }
-.work__meta { grid-column: 2; display: flex; flex-wrap: wrap; gap: 12px 40px; margin-top: 4px; }
-.work__meta dt { font-size: 0.8125rem; color: var(--graphite); }
-.work__meta dd { font-size: 0.9375rem; font-weight: 500; }
-.work__highlight { color: var(--rust); }
 
 /* Hovering one case study blurs the others */
 @media (hover: hover) {
@@ -477,10 +473,13 @@ main, .footer, .header { position: relative; z-index: 1; }
 
 /* ---------- Case study ---------- */
 
-.back { display: inline-block; font-size: 1rem; font-weight: 500; color: var(--graphite); margin-bottom: 48px; transition: color 0.3s; }
-.back::before { content: ""; display: inline-block; width: 18px; height: 1px; background: currentColor; vertical-align: middle; margin-right: 10px; transition: width 0.3s var(--ease); }
+.back { display: inline-flex; align-items: center; gap: 10px; font-size: 1rem; font-weight: 500; color: var(--graphite); margin-bottom: 48px; transition: color 0.3s; }
+.back__arrow {
+  width: 20px; height: 20px; fill: none; stroke: currentColor; stroke-width: 1.5;
+  transition: transform 0.4s var(--ease);
+}
 .back:hover { color: var(--rust); }
-.back:hover::before { width: 28px; }
+.back:hover .back__arrow { transform: translateX(-4px); }
 .back--light { color: rgba(255, 255, 255, 0.75); }
 .back--light:hover { color: #fff; }
 
@@ -583,17 +582,30 @@ main, .footer, .header { position: relative; z-index: 1; }
 .gallery--grid { grid-template-columns: repeat(2, minmax(0, 1fr)); }
 
 .next { padding-bottom: 128px; }
-.next__link { display: block; }
+.next__link { display: flex; align-items: center; justify-content: space-between; gap: 32px; }
+/* big square arrow, with the same pixel-fill hover as the buttons */
+.next__arrow {
+  position: relative; overflow: hidden; flex: none;
+  display: grid; place-items: center;
+  width: clamp(72px, 4rem + 4vw, 128px); aspect-ratio: 1;
+  border: 1px solid var(--ink); color: var(--ink);
+  transition: color 0.4s, border-color 0s 0.3s;
+}
+.next__arrow .pixels i { background: var(--rust); }
+.next__arrow svg {
+  position: relative; width: 50%; height: 50%;
+  fill: none; stroke: currentColor; stroke-width: 1.25;
+  transition: transform 0.5s var(--ease);
+}
+.next__link:is(:hover, :focus-visible) .next__arrow { color: #fff; border-color: var(--rust); }
+.next__link:is(:hover, :focus-visible) .next__arrow .pixels i { opacity: 1; }
+.next__link:is(:hover, :focus-visible) .next__arrow svg { transform: translateX(6px); }
 .next__title {
   display: block; font-family: var(--display); font-size: clamp(2.25rem, 1.4rem + 3.2vw, 4rem);
   font-weight: 600; letter-spacing: -0.035em; line-height: 1.02; transition: color 0.3s;
 }
 .next__summary { display: block; margin-top: 12px; color: var(--body); }
 .next__link:hover .next__title { color: var(--rust); }
-
-/* ---------- Pointer trail ---------- */
-
-.cursor-trail { position: fixed; inset: 0; z-index: 999; pointer-events: none; }
 
 /* ---------- Small screens ---------- */
 
@@ -613,7 +625,6 @@ main, .footer, .header { position: relative; z-index: 1; }
   .section { padding-bottom: 96px; }
   .work-list { gap: 80px; }
   .work__info { grid-template-columns: 1fr; margin-top: 20px; }
-  .work__meta { grid-column: 1; }
   .about { grid-template-columns: 1fr; gap: 40px; }
   .about__photo { max-width: 360px; }
   .timeline li { grid-template-columns: 1fr; gap: 6px; }

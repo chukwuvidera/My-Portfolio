@@ -46,11 +46,6 @@ export default function Home() {
                       {p.title}
                     </h3>
                     <p className="work__summary">{p.summary}</p>
-                    <dl className="work__meta">
-                      <div><dt>Company</dt><dd>{p.company}</dd></div>
-                      <div><dt>Year</dt><dd>{p.year}</dd></div>
-                      <div><dt>Result</dt><dd className="work__highlight">{p.highlight}</dd></div>
-                    </dl>
                   </div>
                 </Link>
               </li>

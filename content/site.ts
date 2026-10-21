@@ -58,13 +58,15 @@ export const site = {
     { label: "Behance", href: "https://www.behance.net/victor-chukwu" },
   ],
   hero: {
-    headline: "Product designer, strategist, and revenue advocate.",
-    accent: "revenue advocate.", // the part of the headline shown in burnt orange
+    headline: "Product designer and Strategist",
+    accent: "Strategist", // the part of the headline shown in burnt orange
     intro:
-      "For nearly five years I've designed fintech, crypto infrastructure and SaaS products that make complex systems simple for the businesses and people who rely on them. Today I lead design for infrastructure products at Roqqu.",
+      "I've designed fintech, crypto infrastructure and SaaS products that make complex systems simple for the businesses and people who rely on them.",
   },
   about: {
     heading: "Product strategy, systems thinking and user experience, in one practice.",
+    intro:
+      "For nearly five years I've designed fintech, crypto infrastructure and SaaS products that make complex systems simple for the businesses and people who rely on them. Today I lead design for infrastructure products at Roqqu.",
     body: [
       "I started as a product design intern and grew into leading design teams. Along the way I've learnt that the best interfaces come from understanding the system underneath them, the business it has to serve, and the people who rely on it every day.",
       "At Roqqu I've worked across almost every product division: the retail app, internal products and the design system. I now lead design for the infrastructure products that other businesses build on.",

@@ -4,6 +4,7 @@ import type { Metadata } from "next";
 import { site, projects } from "@/content/site";
 import Media from "@/components/Media";
 import Button from "@/components/Button";
+import { Pixels } from "@/components/Flip";
 
 export function generateStaticParams() {
   return projects.map((p) => ({ slug: p.slug }));
@@ -28,6 +29,9 @@ export default async function CaseStudy({ params }: { params: Promise<{ slug: st
       <header className="case-hero" style={{ ["--tint" as string]: p.tint }}>
         <div className="case-hero__inner">
           <Link href="/#work" className="back back--light">
+            <svg className="back__arrow" viewBox="0 0 20 20" aria-hidden="true">
+              <path d="M8.1 14.4 3.8 10l4.3-4.4M3.8 10h12.5" />
+            </svg>
             All work
           </Link>
           <p className="case-hero__eyebrow">{p.company}</p>
@@ -127,9 +131,17 @@ export default async function CaseStudy({ params }: { params: Promise<{ slug: st
         <div className="rule" aria-hidden="true" />
         <div className="wrap narrow">
           <p className="block__label">Next case study</p>
-          <Link href={`/work/${next.slug}/`} className="next__link" data-cursor="view">
-            <span className="next__title">{next.title}</span>
-            <span className="next__summary">{next.summary}</span>
+          <Link href={`/work/${next.slug}/`} className="next__link">
+            <span className="next__text">
+              <span className="next__title">{next.title}</span>
+              <span className="next__summary">{next.summary}</span>
+            </span>
+            <span className="next__arrow" aria-hidden="true">
+              <Pixels />
+              <svg viewBox="0 0 20 20">
+                <path d="M11.9 14.4 16.2 10l-4.3-4.4M16.2 10H3.7" />
+              </svg>
+            </span>
           </Link>
         </div>
       </section>
