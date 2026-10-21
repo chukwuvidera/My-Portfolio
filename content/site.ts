@@ -441,8 +441,8 @@ export const projects: Project[] = [
     company: "Charisol",
     year: "2021 – 2025",
     highlight: "Helped win and keep clients",
-    tint: "#5a2f1c",
-    cover: { label: "MailDrip cover: dashboard and email builder" },
+    tint: "#1f2a8c", // MailDrip blue, deepened
+    cover: { label: "MailDrip dashboard in front of the email builder", src: "/images/work/maildrip/cover.webp" },
     tags: ["Product design", "Design leadership", "2021 – 2025", "Live"],
     overview:
       "MailDrip is an email marketing platform that helps small and growing businesses, creators and personal brands create, send and manage campaigns without complexity.",
@@ -481,7 +481,7 @@ export const projects: Project[] = [
           "MailDrip is an email marketing platform that helps businesses create, send and manage email campaigns without complexity. It was designed for small and growing businesses, creators and personal brands that need powerful tools but not enterprise-level friction.",
           "I joined the project as a product design intern. About a year and a half later I became lead designer at Charisol and led MailDrip's continued improvement, designing entirely new flows and experiences across most of the product.",
         ],
-        images: [{ label: "MailDrip dashboard" }],
+        images: [{ label: "MailDrip dashboard: credits, contacts, campaign performance and recent campaigns", src: "/images/work/maildrip/dashboard.webp" }],
       },
       {
         label: "Challenge",
@@ -515,10 +515,10 @@ export const projects: Project[] = [
           { title: "Pricing, plans and pay-as-you-go credits" },
         ],
         images: [
-          { label: "Campaign setup" },
-          { label: "Email builder" },
-          { label: "Contacts" },
-          { label: "Plans and email credits" },
+          { label: "Drip campaigns, with status and performance at a glance", src: "/images/work/maildrip/campaigns.webp" },
+          { label: "Drag-and-drop email builder", src: "/images/work/maildrip/email-builder.webp" },
+          { label: "Contacts and contact groups", src: "/images/work/maildrip/contacts.webp" },
+          { label: "Plans, pay-as-you-go email credits and payment", src: "/images/work/maildrip/plans-and-credits.webp" },
         ],
       },
       {
