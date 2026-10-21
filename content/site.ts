@@ -125,7 +125,7 @@ export const projects: Project[] = [
     year: "2023 – present",
     highlight: "15+ businesses integrated",
     tint: "#27354d",
-    cover: { label: "RAS cover: console overview on a laptop mockup" },
+    cover: { label: "RAS console overview in front of the new Stocks page", src: "/images/work/ras/cover.webp" },
     tags: ["0 to 1 product design", "Developer platform", "2023 – present", "Live"],
     overview:
       "Roqqu API Services lets businesses and developers build Roqqu's crypto infrastructure, such as wallets, transactions and financial services, directly into their own products through APIs.",
@@ -162,7 +162,7 @@ export const projects: Project[] = [
         body: [
           "Roqqu API Services (RAS) lets businesses and developers build Roqqu's crypto infrastructure, such as wallets, transactions and financial services, directly into their own products through APIs.",
         ],
-        images: [{ label: "RAS console: overview dashboard" }],
+        images: [{ label: "RAS console overview: crypto and fiat balances, assets and asset movement", src: "/images/work/ras/dashboard.webp" }],
       },
       {
         label: "Problem",
@@ -208,12 +208,30 @@ export const projects: Project[] = [
           { title: "Reusable components that scale with the API" },
         ],
         images: [
-          { label: "Wallets and address management" },
-          { label: "Transactions with filters and export" },
-          { label: "API keys, IP access and security settings" },
-          { label: "Webhooks" },
-          { label: "Plans and billing" },
-          { label: "Mobile views of the console", ratio: "16 / 9" },
+          { label: "Wallet overview and address management", src: "/images/work/ras/wallets.webp" },
+          { label: "Transactions with filters and export", src: "/images/work/ras/transactions.webp" },
+          { label: "API keys, with test and live modes", src: "/images/work/ras/api-keys.webp" },
+          { label: "IP access list", src: "/images/work/ras/ip-access.webp" },
+          { label: "Plans that grow with the merchant", src: "/images/work/ras/plans.webp" },
+          { label: "Team management and roles", src: "/images/work/ras/team.webp" },
+        ],
+      },
+      {
+        label: "What's new",
+        heading: "Beyond crypto: stocks and fiat.",
+        body: [
+          "RAS keeps growing, and the console has grown with it. Merchants can now hold and trade stocks, and move between fiat and crypto, without leaving the same calm interface they already use for wallets and transactions.",
+        ],
+        list: [
+          { title: "Stocks.", text: "A stocks portfolio, all stocks and top movers at a glance, detailed price charts, and flows to buy and sell." },
+          { title: "Fiat.", text: "Top up a fiat balance, withdraw to a bank account, and buy or sell USDT with fiat." },
+          { title: "One record.", text: "Fiat deposits, withdrawals and USDT trades sit in their own transactions view, alongside crypto and stocks." },
+        ],
+        images: [
+          { label: "Stocks: portfolio, all stocks and top movers", src: "/images/work/ras/stocks.webp" },
+          { label: "Stock details with a candlestick chart", src: "/images/work/ras/stock-details.webp" },
+          { label: "Buying USDT with fiat", src: "/images/work/ras/buy-usdt-with-fiat.webp" },
+          { label: "Fiat transactions: deposits, withdrawals and USDT trades", src: "/images/work/ras/fiat-transactions.webp" },
         ],
       },
       {

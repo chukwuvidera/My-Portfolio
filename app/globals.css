@@ -159,19 +159,19 @@ main, .footer, .header { position: relative; z-index: 1; }
 }
 .header__bar {
   display: flex; justify-content: space-between; align-items: stretch;
-  margin-inline: var(--edge); border-bottom: 1px solid var(--rule);
+  padding-inline: var(--edge); border-bottom: 1px solid var(--rule); /* line runs edge to edge */
 }
 .header__logo { display: flex; align-items: center; padding-inline: 20px; color: var(--ink); transition: color 0.3s; }
 .header__logo .signature { height: 36px; }
 .header__logo:hover { color: var(--rust); }
 .header__ruler {
-  position: relative; height: 10px; margin-inline: var(--edge); border-bottom: 1px solid var(--rule);
+  position: relative; height: 10px; border-bottom: 1px solid var(--rule); /* ruler runs edge to edge */
   background: repeating-linear-gradient(to right, var(--rule) 0 1px, transparent 1px 8px);
 }
 .header__ruler::before,
 .header__ruler::after { top: auto; bottom: -7px; }
-.header__ruler::before { left: -7px; }
-.header__ruler::after { right: -7px; }
+.header__ruler::before { left: calc(var(--edge) - 6px); } /* crosses sit on the frame lines */
+.header__ruler::after { right: calc(var(--edge) - 6px); }
 
 .nav { display: flex; height: 56px; }
 .nav li { display: flex; }
