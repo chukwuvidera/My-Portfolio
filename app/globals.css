@@ -322,7 +322,7 @@ html.menu-open { overflow: hidden; }
 .work__frame { position: relative; border-radius: 32px; transition: transform 0.6s var(--ease); will-change: transform; }
 .work__media { position: relative; border-radius: 32px; overflow: hidden; }
 .work__media .media img,
-.work__media .media__placeholder { aspect-ratio: 2 / 1 !important; }
+.work__media .media__placeholder { aspect-ratio: 16 / 10 !important; } /* the covers' own shape, so nothing is cropped */
 
 /* On hover, the title rises over the lower half on a blurred panel, so the product shows through */
 .work__reveal {
@@ -782,7 +782,7 @@ html.lightbox-open { overflow: hidden; }
   }
 
   /* images drift inside their frames while scrolling */
-  .work__media .media { transform: translateY(calc((var(--p, 0.5) - 0.5) * -5%)) scale(1.06); }
+  .work__media .media { transform: translateY(calc((var(--p, 0.5) - 0.5) * -3%)) scale(1.03); }
   .about-hero__portrait, .about__photo { overflow: hidden; border-radius: 4px; }
   .about-hero__portrait img, .about__photo img { transform: translateY(calc((var(--p, 0.5) - 0.5) * -10%)) scale(1.12); }
 
@@ -872,10 +872,6 @@ html.lightbox-open { overflow: hidden; }
   }
   .mobile-menu__foot p { display: flex; gap: 20px; }
   .mobile-menu__foot a { color: var(--ink); }
-
-  /* taller case study cards on the home page */
-  .work__media .media img,
-  .work__media .media__placeholder { aspect-ratio: 4 / 3 !important; }
 
   .about-hero, .about { grid-template-columns: 1fr; }
   .about-hero__portrait, .about__photo { max-width: 360px; }
