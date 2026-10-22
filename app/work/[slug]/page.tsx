@@ -44,7 +44,7 @@ export default async function CaseStudy({ params }: { params: Promise<{ slug: st
               <li key={t} className="intro-fade" style={{ ["--delay" as string]: `${600 + k * 80}ms` }}>{t}</li>
             ))}
           </ul>
-          <div className="case-hero__shot intro-fade" style={{ ["--delay" as string]: "750ms" }}>
+          <div className="case-hero__shot intro-fade" data-cursor="light" style={{ ["--delay" as string]: "750ms" }}>
             <Media img={p.cover} cover={{ title: p.title, meta: "Case study" }} />
           </div>
         </div>

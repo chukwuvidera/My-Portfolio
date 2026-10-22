@@ -56,6 +56,7 @@ export default function Home() {
                       style={{ ["--tint" as string]: p.tint }}
                       data-reveal="clip"
                       data-scrub="parallax"
+                      data-cursor="light"
                     >
                       <Media img={p.cover} cover={{ title: p.title, meta: p.highlight }} />
                       <div className={`work__reveal${p.coverText === "light" ? " work__reveal--light-text" : ""}`} aria-hidden="true">

@@ -119,6 +119,40 @@ ul, ol { padding: 0; list-style: none; }
 }
 .pointer-glow.is-on { opacity: 1; transition-duration: 0.3s; }
 
+/* The cursor: a dot on the pointer and a ring that trails it (PointerEffects).
+   Each box is centred on the viewport origin and moved with `translate`, so the
+   hover `scale` swells the ring about its own centre. */
+html.has-custom-cursor, html.has-custom-cursor * { cursor: none !important; }
+.cursor-dot, .cursor-ring {
+  --cursor: #22231f;
+  --cursor-fill: rgba(173, 80, 25, 0.14);
+  --cursor-edge: #ad5019;
+  position: fixed; z-index: 9999; pointer-events: none; border-radius: 50%;
+  opacity: 0; transition: opacity 0.25s var(--ease);
+}
+html.cursor-on-dark :is(.cursor-dot, .cursor-ring) {
+  --cursor: #f2f1ec;
+  --cursor-fill: rgba(226, 121, 61, 0.2);
+  --cursor-edge: #e2793d;
+}
+html.cursor-ready :is(.cursor-dot, .cursor-ring) { opacity: 1; }
+html.cursor-out :is(.cursor-dot, .cursor-ring) { opacity: 0; }
+.cursor-dot {
+  width: 6px; height: 6px; top: -3px; left: -3px;
+  background: var(--cursor);
+  transition: opacity 0.25s var(--ease), background-color 0.25s var(--ease), scale 0.2s var(--ease);
+}
+.cursor-ring {
+  width: 34px; height: 34px; top: -17px; left: -17px;
+  border: 1px solid var(--cursor);
+  transition: opacity 0.25s var(--ease), scale 0.45s var(--ease), border-color 0.25s var(--ease), background-color 0.25s var(--ease);
+}
+/* over anything clickable the ring swells and fills burnt orange */
+.cursor-ring.is-hovering { scale: calc(60 / 34); background-color: var(--cursor-fill); border-color: var(--cursor-edge); }
+html.cursor-down .cursor-ring { scale: 0.8; }
+html.cursor-down .cursor-ring.is-hovering { scale: calc(50 / 34); }
+html.cursor-down .cursor-dot { scale: 0.6; }
+
 main, .footer, .header { position: relative; z-index: 1; }
 
 /* Horizontal rule that crosses the guides, marked with small crosses */
