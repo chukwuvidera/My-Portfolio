@@ -1,10 +1,12 @@
 "use client";
 import { useEffect, useRef } from "react";
+import { ZOOMABLE } from "./Lightbox";
 
 /**
  * Pointer effects for mouse users who haven't asked for reduced motion:
  * - the cursor: a dot on the pointer and a ring that trails after it,
  *   swelling over anything clickable and turning light over dark surfaces
+ * - over images that open in the zoom view, a "Click to view closer" label rides with the ring
  * - a soft brown glow sits under the pointer and fades out when it rests
  * - buttons marked [data-magnetic] lean towards the pointer
  * Touch screens and reduced motion keep the system cursor.
@@ -14,6 +16,7 @@ import { useEffect, useRef } from "react";
 const INTERACTIVE = 'a, button, summary, input, select, textarea, label, [role="button"], .lightbox__stage img';
 // Dark images paint no background colour for the check below to read, so they're marked
 const DARK = '[data-cursor="light"]';
+const LABEL_ROOM = 240; // flip the label to the left of the pointer this close to the right edge
 const RING_LAG = 0.18; // how far the ring closes the gap per 60fps frame (kept the same at any frame rate)
 
 const channel = (c: number) => {
@@ -40,6 +43,7 @@ function onDark(node: Element | null) {
 export default function PointerEffects() {
   const dotRef = useRef<HTMLDivElement>(null);
   const ringRef = useRef<HTMLDivElement>(null);
+  const labelRef = useRef<HTMLDivElement>(null);
 
   useEffect(() => {
     const fine = window.matchMedia("(hover: hover) and (pointer: fine)").matches;
@@ -49,6 +53,7 @@ export default function PointerEffects() {
     const root = document.documentElement;
     const dot = dotRef.current!;
     const ring = ringRef.current!;
+    const label = labelRef.current!;
     root.classList.add("has-custom-cursor");
 
     const glow = document.querySelector<HTMLElement>(".pointer-glow");
@@ -67,6 +72,8 @@ export default function PointerEffects() {
       rx += (mx - rx) * k;
       ry += (my - ry) * k;
       ring.style.translate = `${rx.toFixed(1)}px ${ry.toFixed(1)}px`;
+      label.style.translate = ring.style.translate;
+      label.classList.toggle("is-flipped", rx > window.innerWidth - LABEL_ROOM);
       raf = Math.abs(mx - rx) + Math.abs(my - ry) > 0.1 ? requestAnimationFrame(follow) : (last = 0);
     };
 
@@ -74,6 +81,7 @@ export default function PointerEffects() {
     const read = (target: Element | null) => {
       if (!target) return;
       ring.classList.toggle("is-hovering", !!target.closest(INTERACTIVE));
+      label.classList.toggle("is-on", !!target.closest(ZOOMABLE));
       root.classList.toggle("cursor-on-dark", onDark(target));
     };
     // Scrolling, the theme switch and the zoom view change what's under a still pointer
@@ -163,6 +171,9 @@ export default function PointerEffects() {
     <>
       <div ref={dotRef} className="cursor-dot" aria-hidden="true" />
       <div ref={ringRef} className="cursor-ring" aria-hidden="true" />
+      <div ref={labelRef} className="cursor-label" aria-hidden="true">
+        Click to view closer
+      </div>
     </>
   );
 }

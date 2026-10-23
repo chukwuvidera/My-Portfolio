@@ -152,6 +152,17 @@ html.cursor-out :is(.cursor-dot, .cursor-ring) { opacity: 0; }
 html.cursor-down .cursor-ring { scale: 0.8; }
 html.cursor-down .cursor-ring.is-hovering { scale: calc(50 / 34); }
 html.cursor-down .cursor-dot { scale: 0.6; }
+/* over zoomable images a label rides beside the ring, so it's clear they open larger */
+.cursor-label {
+  position: fixed; top: 26px; left: 26px; z-index: 9999; pointer-events: none;
+  padding: 8px 12px; background: #ad5019; color: #fff; white-space: nowrap;
+  font-family: var(--mono); font-size: 0.6875rem; letter-spacing: 0.04em; text-transform: uppercase;
+  opacity: 0; scale: 0.85; transform-origin: top left;
+  transition: opacity 0.25s var(--ease), scale 0.35s var(--ease);
+}
+.cursor-label.is-flipped { transform: translateX(calc(-100% - 52px)); transform-origin: top right; }
+html.cursor-ready .cursor-label.is-on { opacity: 1; scale: 1; }
+html.cursor-out .cursor-label { opacity: 0; }
 
 main, .footer, .header { position: relative; z-index: 1; }
 
