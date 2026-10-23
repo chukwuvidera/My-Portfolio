@@ -278,7 +278,7 @@ export const projects: Project[] = [
     highlight: "19,000+ users",
     tint: "#3a2d5a",
     coverText: "light",
-    cover: { label: "Roqqu Web3 cover: wallet home on phone mockups" },
+    cover: { label: "Roqqu Web3 welcome, wallet home and a dApp connection request", src: "/images/work/web3/cover.webp" },
     tags: ["0 to 1 product design", "Sole designer", "2025", "Live"],
     overview:
       "Roqqu's Web3 wallet lets new and existing users take part in on-chain activity directly through their Roqqu account, and hold their own assets in self-custody alongside it.",
@@ -315,7 +315,7 @@ export const projects: Project[] = [
         body: [
           "Roqqu built its Web3 wallet so new and existing users could take part in on-chain activity directly through their Roqqu account, and hold their own assets in self-custody alongside it.",
         ],
-        images: [{ label: "Web3 wallet home", ratio: "16 / 9" }],
+        images: [{ label: "Wallet home: balance, quick actions and prompts to back up, claim an NFT or start trading", src: "/images/work/web3/home.webp", ratio: "16 / 9" }],
       },
       {
         label: "Problem",
@@ -331,6 +331,9 @@ export const projects: Project[] = [
           "The hardest part was the research. I had to understand how the Web3 space really works, then turn it into an interface users already knew, without introducing new patterns they'd have to learn.",
           "Having every Web3 action happen inside the Roqqu app was new, so the experience had to feel like a natural part of Roqqu rather than a separate product.",
         ],
+        images: [
+          { label: "Managing assets across networks, a coin page and transaction history, in patterns Roqqu users already know", src: "/images/work/web3/assets-and-history.webp", ratio: "16 / 9" },
+        ],
       },
       {
         label: "Solution",
@@ -340,12 +343,14 @@ export const projects: Project[] = [
           { title: "Send and receive", text: "using flows that mirror the ones Roqqu users already use." },
           { title: "Swap and bridge", text: "across tokens and networks." },
           { title: "Use dApps", text: "directly from the Roqqu app." },
+          { title: "Stay in control", text: "of wallets, connected dApps, security and language from one profile." },
         ],
         images: [
-          { label: "Create or connect a wallet", ratio: "16 / 9" },
-          { label: "Send and receive", ratio: "16 / 9" },
-          { label: "Swap and bridge", ratio: "16 / 9" },
-          { label: "dApp browser", ratio: "16 / 9" },
+          { label: "Creating a wallet: setup, what a secret phrase is for, a passcode, and the wallet being created", src: "/images/work/web3/create-wallet.webp", ratio: "16 / 9" },
+          { label: "Sending and receiving: choose an asset, enter an amount, confirm, or share an address to receive", src: "/images/work/web3/send-and-receive.webp", ratio: "16 / 9" },
+          { label: "Swapping tokens: set the amounts, adjust slippage, confirm and done", src: "/images/work/web3/swap.webp", ratio: "16 / 9" },
+          { label: "Using dApps: explore, a third-party disclaimer, a connection request and a connected dApp", src: "/images/work/web3/dapps.webp", ratio: "16 / 9" },
+          { label: "Profile: wallets, connected dApps, wallet details and language, including Yoruba, Igbo and Hausa", src: "/images/work/web3/profile-and-security.webp", ratio: "16 / 9" },
         ],
       },
       {
