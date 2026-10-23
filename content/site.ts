@@ -279,7 +279,7 @@ export const projects: Project[] = [
     tint: "#3a2d5a",
     coverText: "light",
     cover: { label: "Roqqu Web3 welcome, wallet home and a dApp connection request", src: "/images/work/web3/cover.webp" },
-    tags: ["0 to 1 product design", "Sole designer", "2025", "Live"],
+    tags: ["0 to 1 product design", "Product designer", "2025", "Live"],
     overview:
       "Roqqu's Web3 wallet lets new and existing users take part in on-chain activity directly through their Roqqu account, and hold their own assets in self-custody alongside it.",
     summaryCards: {
@@ -299,10 +299,10 @@ export const projects: Project[] = [
     impact: [
       { value: "19,000+", label: "Users", caption: "On Roqqu's Web3 wallet" },
       { value: "1", label: "Account", caption: "For custodial and on-chain activity" },
-      { value: "0 → 1", label: "Built from scratch", caption: "As the sole product designer" },
+      { value: "0 → 1", label: "Built from scratch", caption: "As the product designer" },
     ],
     details: [
-      { label: "Role", value: "Sole product designer, from scratch" },
+      { label: "Role", value: "Product designer, from scratch" },
       { label: "Team", value: "Roqqu product and engineering" },
       { label: "Timeline", value: "Designed early 2025, launched later in 2025" },
       { label: "Scope", value: "Web3 research, UX flows, interface design" },
