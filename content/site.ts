@@ -49,7 +49,7 @@ export const site = {
   name: "Victor Chukwu",
   title: "Product designer, strategist, and revenue advocate.",
   email: "chukwuvidera@gmail.com",
-  cv: "", // e.g. "/victor-chukwu-cv.pdf" — the download button appears once this is set
+  cv: "/Victor-Chukwu-CV.pdf", // opened by "Resume" in the nav; also the "Download CV" button on About
   url: "https://victorchukwu.design", // used once the domain is live; until then the Vercel address is used
   // Image slots without a `src` show a labelled placeholder. Set to false to hide them
   // until the Figma frames are in (covers always show their designed placeholder).
