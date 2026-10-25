@@ -513,7 +513,6 @@ html.menu-open { overflow: hidden; }
 
 /* ---------- Contact ---------- */
 
-.contact__lead { font-size: 1.25rem; color: var(--body); max-width: 32rem; }
 .contact__email {
   display: inline-block; margin-top: 28px;
   font-family: var(--display); font-size: clamp(1.6rem, 0.9rem + 3.4vw, 3.5rem);

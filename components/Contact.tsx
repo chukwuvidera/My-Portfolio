@@ -13,9 +13,6 @@ export default function Contact() {
         <p className="contact__big" data-scrub="converge">
           <Split text="Let's work together." scatter />
         </p>
-        <p className="contact__lead" data-reveal>
-          I'm open to full-time product design roles at startups, fintech and SaaS companies: local, remote or international.
-        </p>
         <a className="contact__email wave" href={`mailto:${site.email}`} data-reveal>
           <Split text={site.email} letters />
         </a>
