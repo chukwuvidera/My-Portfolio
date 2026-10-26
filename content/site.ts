@@ -62,8 +62,8 @@ export const site = {
   workIntro:
     "Four products across crypto infrastructure, Web3, trading and email marketing, each designed to make complex systems feel simple.",
   hero: {
-    headline: "Product designer and Strategist",
-    accent: "Strategist", // the part of the headline shown in burnt orange
+    headline: "Product designer and Design strategist",
+    accent: "Design strategist", // the part of the headline shown in burnt orange
     intro:
       "I've designed fintech, crypto infrastructure and SaaS products that make complex systems simple for the businesses and people who rely on them.",
   },

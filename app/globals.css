@@ -327,7 +327,11 @@ html.menu-open { overflow: hidden; }
   font-weight: 600; line-height: 0.96; letter-spacing: -0.045em;
   max-width: 13ch; margin-inline: auto; text-wrap: balance;
 }
-.hero__title em { font-style: normal; color: var(--rust); }
+.hero__title em { display: block; font-style: normal; color: var(--rust); } /* the second role gets its own line */
+@media (min-width: 641px) {
+  .hero__title { max-width: 17ch; }
+  .hero__title em { white-space: nowrap; }
+}
 .hero__intro { margin: 36px auto 0; max-width: 36rem; color: var(--body); text-wrap: pretty; }
 .hero__actions { margin-top: 40px; display: flex; flex-wrap: wrap; justify-content: center; align-items: center; gap: 28px; }
 
