@@ -14,7 +14,18 @@ export function generateStaticParams() {
 export async function generateMetadata({ params }: { params: Promise<{ slug: string }> }): Promise<Metadata> {
   const { slug } = await params;
   const p = projects.find((x) => x.slug === slug);
-  return p ? { title: p.title, description: p.summary } : {};
+  if (!p) return {};
+  // Link previews show the case study's own title and cover
+  return {
+    title: p.title,
+    description: p.summary,
+    openGraph: {
+      title: `${p.title} — ${site.name}`,
+      description: p.summary,
+      images: [{ url: `/images/og/${p.slug}.jpg`, width: 1200, height: 630 }],
+      type: "article",
+    },
+  };
 }
 
 export default async function CaseStudy({ params }: { params: Promise<{ slug: string }> }) {

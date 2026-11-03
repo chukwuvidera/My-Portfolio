@@ -13,18 +13,19 @@ import Motion from "@/components/Motion";
 import Lightbox from "@/components/Lightbox";
 
 export const metadata: Metadata = {
-  // The Vercel address until victorchukwu.design is bought and connected
+  // On Vercel: the production domain (victorchukwu.design once connected)
   metadataBase: new URL(
     process.env.VERCEL_PROJECT_PRODUCTION_URL ? `https://${process.env.VERCEL_PROJECT_PRODUCTION_URL}` : site.url
   ),
-  title: { default: `${site.name} — Product designer`, template: `%s — ${site.name}` },
-  description: `${site.title} Fintech, crypto infrastructure and SaaS products used across Africa.`,
+  title: { default: `${site.name} — Product designer and product strategist`, template: `%s — ${site.name}` },
+  description: "Product designer and product strategist designing fintech, crypto infrastructure and SaaS products used across Africa.",
   openGraph: {
-    title: `${site.name} — Product designer`,
+    title: `${site.name} — Product designer and product strategist`,
     description: site.hero.intro,
-    images: ["/images/victor-portrait.jpg"],
+    images: [{ url: "/images/og/home.jpg", width: 1200, height: 630 }],
     type: "website",
   },
+  twitter: { card: "summary_large_image" },
 };
 
 export const viewport: Viewport = {

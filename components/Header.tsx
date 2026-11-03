@@ -7,7 +7,7 @@ import Signature from "./Signature";
 import ThemeToggle from "./ThemeToggle";
 import { FlipLabel, Pixels } from "./Flip";
 
-// Until the CV PDF is added in content/site.ts, "Resume" opens LinkedIn
+// "Resume" opens the CV; if site.cv is ever emptied, it falls back to LinkedIn
 const linkedin = site.socials.find((s) => s.label === "LinkedIn")?.href ?? "/about/";
 const nav = [
   { label: "Work", href: "/#work", current: (p: string) => p === "/" || p.startsWith("/work") },

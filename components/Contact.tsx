@@ -2,7 +2,7 @@ import { site } from "@/content/site";
 import Button from "./Button";
 import Split from "./Split";
 
-/** Closing contact block, shared by the home and About pages. */
+/** Closing contact block on the About page. */
 export default function Contact() {
   return (
     <section id="contact" className="section" data-lit>

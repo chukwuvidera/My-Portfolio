@@ -3,7 +3,16 @@ import { site } from "@/content/site";
 import Contact from "@/components/Contact";
 import Split, { wordCount } from "@/components/Split";
 
-export const metadata: Metadata = { title: "About", description: site.about.heading };
+export const metadata: Metadata = {
+  title: "About",
+  description: site.about.heading,
+  openGraph: {
+    title: `About — ${site.name}`,
+    description: site.about.heading,
+    images: [{ url: "/images/og/home.jpg", width: 1200, height: 630 }],
+    type: "profile",
+  },
+};
 
 export default function About() {
   return (

@@ -47,12 +47,12 @@ export type Project = {
 
 export const site = {
   name: "Victor Chukwu",
-  title: "Product designer, strategist, and revenue advocate.",
+  title: "Product designer and product strategist.",
   email: "chukwuvidera@gmail.com",
   cv: "/Victor-Chukwu-CV.pdf", // opened by "Resume" in the nav; also the "Download CV" button on About
-  url: "https://victorchukwu.design", // used once the domain is live; until then the Vercel address is used
-  // Image slots without a `src` show a labelled placeholder. Set to false to hide them
-  // until the Figma frames are in (covers always show their designed placeholder).
+  url: "https://victorchukwu.design", // fallback address; on Vercel the production domain is used
+  // Image slots without a `src` show a labelled placeholder (covers show a designed one).
+  // Set to false to hide placeholders instead.
   showImagePlaceholders: true,
   socials: [
     { label: "LinkedIn", href: "https://www.linkedin.com/in/chidera-victor-chukwu/" },
@@ -62,8 +62,8 @@ export const site = {
   workIntro:
     "Four products across crypto infrastructure, Web3, trading and email marketing, each designed to make complex systems feel simple.",
   hero: {
-    headline: "Product designer and Design strategist",
-    accent: "Design strategist", // the part of the headline shown in burnt orange
+    headline: "Product designer and Product strategist",
+    accent: "Product strategist", // the part of the headline shown in burnt orange
     intro:
       "I've designed fintech, crypto infrastructure and SaaS products that make complex systems simple for the businesses and people who rely on them.",
   },
@@ -350,7 +350,7 @@ export const projects: Project[] = [
           { label: "Sending and receiving: choose an asset, enter an amount, confirm, or share an address to receive", src: "/images/work/web3/send-and-receive.webp", ratio: "16 / 9" },
           { label: "Swapping tokens: set the amounts, adjust slippage, confirm and done", src: "/images/work/web3/swap.webp", ratio: "16 / 9" },
           { label: "Using dApps: explore, a third-party disclaimer, a connection request and a connected dApp", src: "/images/work/web3/dapps.webp", ratio: "16 / 9" },
-          { label: "Profile: wallets, connected dApps, wallet details and language, including Yoruba, Igbo and Hausa", src: "/images/work/web3/profile-and-security.webp", ratio: "16 / 9" },
+          { label: "Profile: wallets, connected dApps, security settings, wallet details and language, including Yoruba, Igbo and Hausa", src: "/images/work/web3/profile-and-security.webp", ratio: "16 / 9" },
         ],
       },
       {
@@ -396,7 +396,7 @@ export const projects: Project[] = [
     impact: [
       { value: "50k+", label: "Downloads", caption: "On Google Play" },
       { value: "2024", label: "Relaunch", caption: "The redesign shipped and went live" },
-      { value: "2025", label: "Acquired by Roqqu", caption: "To accelerate its entry into East Africa" },
+      { value: "2025", label: "Acquired by Roqqu", caption: "Accelerating Roqqu's entry into East Africa" },
     ],
     details: [
       { label: "Role", value: "Associate designer on the redesign, then design lead for the product" },
@@ -410,7 +410,7 @@ export const projects: Project[] = [
         heading: "A mobile-first trading app, rebuilt for clarity.",
         body: [
           "Flitaa is a mobile-first crypto trading app that helps users buy, sell and manage cryptocurrencies with confidence. The goal of the redesign was to make trading feel approachable for new users while staying powerful and reliable for experienced traders.",
-          "Roqqu acquired Flitaa, announced publicly in 2025, to accelerate its entry into Kenya and the wider East African market.",
+          "Roqqu's acquisition of Flitaa, announced publicly in 2025, accelerates Roqqu's entry into Kenya and the wider East African market.",
         ],
         images: [{ label: "Flitaa home, wallet and asset screens", src: "/images/work/flitaa/home-and-portfolio.webp", ratio: "16 / 9" }],
       },
@@ -560,7 +560,7 @@ export const projects: Project[] = [
         list: [
           { title: "Faster campaign setup", text: "through guided, simplified creation flows." },
           { title: "Clearer performance visibility", text: "for every campaign." },
-          { title: "Clients won and kept.", text: "The ease of sending emails and creating campaigns helped Charisol close and retain several clients." },
+          { title: "Clients won and kept", text: "as easier sending and campaign creation helped Charisol close and retain several clients." },
           { title: "A scalable foundation", text: "for future features." },
         ],
       },
