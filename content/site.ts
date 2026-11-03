@@ -74,7 +74,7 @@ export const site = {
     body: [
       "I started as a product design intern and grew into leading design teams. Along the way I've learnt that the best interfaces come from understanding the system underneath them, the business it has to serve, and the people who rely on it every day.",
       "At Roqqu I've worked across almost every product division: the retail app, internal products and the design system. I now lead design for the infrastructure products that other businesses build on.",
-      "At Charisol I led the design team for about two years, training and mentoring new and existing designers across the company's products.",
+      "At Charisol I led the design team for about a year and a half, training and mentoring new and existing designers across the company's products.",
       "Away from the screen, I sing gospel music.",
     ],
   },
@@ -88,8 +88,8 @@ export const site = {
     {
       company: "Charisol",
       role: "Product Design Intern to Lead Designer",
-      period: "Dec 2021 – 2025",
-      note: "Led the design team for about two years. Designed MailDrip and the Charisol website.",
+      period: "Dec 2021 – mid-2025",
+      note: "Led the design team for about a year and a half. Designed MailDrip and the Charisol website.",
       link: { label: "charisol.io", href: "https://charisol.io" },
     },
     {
@@ -495,7 +495,7 @@ export const projects: Project[] = [
     },
     impact: [
       { value: "Intern → Lead", label: "Grew with the product", caption: "From design intern to lead designer" },
-      { value: "~2 years", label: "Leading the design team", caption: "Training and mentoring Charisol's designers" },
+      { value: "~1.5 years", label: "Leading the design team", caption: "Training and mentoring Charisol's designers" },
       { value: "Several", label: "Clients won and kept", caption: "Through easier sending and campaign creation" },
     ],
     link: { label: "Visit MailDrip", href: "https://app.maildrip.io/" },
