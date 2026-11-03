@@ -512,7 +512,7 @@ export const projects: Project[] = [
         heading: "Powerful tools without enterprise friction.",
         body: [
           "MailDrip is an email marketing platform that helps businesses create, send and manage email campaigns without complexity. It was designed for small and growing businesses, creators and personal brands that need powerful tools but not enterprise-level friction.",
-          "I joined the project as a product design intern. About a year and a half later I became lead designer at Charisol and led MailDrip's continued improvement, designing entirely new flows and experiences across most of the product.",
+          "I joined the project as a product design intern. About two years later I became Charisol's lead designer and led MailDrip's continued improvement, designing entirely new flows and experiences across most of the product.",
         ],
         images: [{ label: "MailDrip dashboard: credits, contacts, campaign performance and recent campaigns", src: "/images/work/maildrip/dashboard.webp" }],
       },
