@@ -74,7 +74,7 @@ export const site = {
     body: [
       "I started as a product design intern and grew into leading design teams. Along the way I've learnt that the best interfaces come from understanding the system underneath them, the business it has to serve, and the people who rely on it every day.",
       "At Roqqu I've worked across almost every product division: the retail app, internal products and the design system. I now lead design for the infrastructure products that other businesses build on.",
-      "At Charisol I led the design team for about three years, training and mentoring new and existing designers across the company's products.",
+      "At Charisol I led the design team for about two years, training and mentoring new and existing designers across the company's products.",
       "Away from the screen, I sing gospel music.",
     ],
   },
@@ -87,9 +87,9 @@ export const site = {
     },
     {
       company: "Charisol",
-      role: "Product Designer, then Lead Designer",
+      role: "Product Design Intern to Lead Designer",
       period: "Dec 2021 – 2025",
-      note: "Led the design team for about three years. Designed MailDrip and the Charisol website.",
+      note: "Led the design team for about two years. Designed MailDrip and the Charisol website.",
       link: { label: "charisol.io", href: "https://charisol.io" },
     },
     {
@@ -285,11 +285,11 @@ export const projects: Project[] = [
     summaryCards: {
       problem: {
         title: "Leaving to go on-chain",
-        text: "To swap on-chain, bridge between networks or use a dApp, Roqqu users had to switch to separate wallets like MetaMask or Trust Wallet.",
+        text: "To swap tokens on-chain or use a dApp, Roqqu users had to switch to separate wallets like MetaMask or Trust Wallet.",
       },
       solution: {
         title: "Web3 in a familiar app",
-        text: "I researched how Web3 really works and turned it into patterns Roqqu users already knew: create or connect a wallet, send, receive, swap, bridge and use dApps.",
+        text: "I researched how Web3 really works and turned it into patterns Roqqu users already knew: create or connect a wallet, send, receive, swap tokens and use dApps.",
       },
       result: {
         title: "Adopted at scale",
@@ -321,7 +321,7 @@ export const projects: Project[] = [
         label: "Problem",
         heading: "Users had to leave to go on-chain.",
         body: [
-          "To swap on-chain, bridge between networks or use a dApp, Roqqu users had to switch to separate wallets like MetaMask or Trust Wallet. Every switch meant another app to learn and another place to manage their assets.",
+          "To swap tokens on-chain or use a dApp, Roqqu users had to switch to separate wallets like MetaMask or Trust Wallet. Every switch meant another app to learn and another place to manage their assets.",
         ],
       },
       {
@@ -341,7 +341,7 @@ export const projects: Project[] = [
         list: [
           { title: "Create or connect a wallet", text: "and hold assets in self-custody." },
           { title: "Send and receive", text: "using flows that mirror the ones Roqqu users already use." },
-          { title: "Swap and bridge", text: "across tokens and networks." },
+          { title: "Swap tokens", text: "with clear amounts and slippage controls." },
           { title: "Use dApps", text: "directly from the Roqqu app." },
           { title: "Stay in control", text: "of wallets, connected dApps, security and language from one profile." },
         ],
@@ -495,7 +495,7 @@ export const projects: Project[] = [
     },
     impact: [
       { value: "Intern → Lead", label: "Grew with the product", caption: "From design intern to lead designer" },
-      { value: "~3 years", label: "Leading the design team", caption: "Training and mentoring Charisol's designers" },
+      { value: "~2 years", label: "Leading the design team", caption: "Training and mentoring Charisol's designers" },
       { value: "Several", label: "Clients won and kept", caption: "Through easier sending and campaign creation" },
     ],
     link: { label: "Visit MailDrip", href: "https://app.maildrip.io/" },
